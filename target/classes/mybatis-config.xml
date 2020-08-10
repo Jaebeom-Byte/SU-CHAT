@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+<configuration>
+	<typeAliases>
+<!--
+		<typeAlias alias="uservo" type="com.bit.mysite.vo.UserVo" />
+		<typeAlias alias="boardvo" type="com.bit.mysite.vo.BoardVo" />
+		<typeAlias alias="galleryvo" type="com.bit.mysite.vo.GalleryVo" />
+-->
+	</typeAliases>
+	
+	<mappers>
+<!--
+		<mapper resource="mybatis/mappers/user.xml" />
+		<mapper resource="mybatis/mappers/board.xml" />
+		<mapper resource="mybatis/mappers/gallery.xml" />
+-->		
+	</mappers>
+</configuration>
