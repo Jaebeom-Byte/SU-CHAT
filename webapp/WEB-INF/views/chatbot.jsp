@@ -292,9 +292,10 @@ img {
 		*/
 		
 		$.ajax({
-			type: 'GET',
-			url: 'ChatAPIController.chat?msg=' + msg,
-			data: '',
+			type: 'POST',
+			url: 'ChatAPIController.chat',
+			data: msg,
+			contentType: 'application/json',
 			success: function(resdata) {
 				var items = resdata
 				setResponse(items)

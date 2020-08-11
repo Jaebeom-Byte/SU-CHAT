@@ -11,6 +11,24 @@
 		http://www.springframework.org/schema/context/spring-context.xsd
 	">
 	
+	<context:annotation-config />
+	<context:component-scan
+		base-package="kr.ac.syu.service,
+					  kr.ac.syu.repository,
+					  kr.ac.syu.exception,
+					  kr.ac.syu.aspect">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Repository" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Component" />
+		<!-- 
+			include-filter	: Scan 대상에 포함시켜라.
+			exclude-filter	: Scan 대상에 제외시켜라.
+		 -->
+	</context:component-scan>
+	
 	<!-- MySQL datasource -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
