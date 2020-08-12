@@ -267,7 +267,7 @@ img {
 							   + '</div>'
 							   + '<div class="received_msg">'
 							   + '<div class="received_with_msg">'
-							   + '<p><b>' + items + '</p></b>'
+							   + '<p><b>' + items.message + '</p></b>'
 							   + '<span class="time_date">' + date_time + '</span>'
 							   + '</div>'
 							   + '</div>'
@@ -297,7 +297,7 @@ img {
 			data: msg,
 			contentType: 'application/json',
 			success: function(resdata) {
-				var items = resdata
+				var items = JSON.parse(resdata)
 				setResponse(items)
 			},
 			beforeSend: function() {
