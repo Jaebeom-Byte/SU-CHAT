@@ -1,6 +1,6 @@
 package kr.ac.syu.vo;
 
-public class MessageVO {
+public class MessageVo {
 	String message;
 
 	public String getData() {

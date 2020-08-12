@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="/recvMsg.chat"></jsp:forward>
+	<jsp:forward page="/WEB-INF/views/chatbot.jsp"></jsp:forward>
 </body>
 </html>
