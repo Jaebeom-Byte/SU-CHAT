@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import kr.ac.syu.service.ChatService;
+import kr.ac.syu.service.AnalyzeService;
 import net.sf.json.JSONObject;
 
 @Controller
@@ -30,7 +30,7 @@ public class ChatAPIController {
 		
 //		jsonObj.put("message", getRequestToPyhtonServer(url, msg));
 		
-		ChatService csv= new ChatService();
+		AnalyzeService csv= new AnalyzeService();
 		csv.Komoran(msg);
 		
 		

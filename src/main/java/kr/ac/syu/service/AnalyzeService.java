@@ -10,7 +10,7 @@ import kr.co.shineware.nlp.komoran.model.KomoranResult;
 import kr.co.shineware.nlp.komoran.model.Token;
 
 @Service
-public class ChatService {
+public class AnalyzeService {
 	/*
 	 * Komoran komoran = new Komoran(DEFAULT_MODEL.FULL); 
 	 * String strToAnalyze =
@@ -25,9 +25,9 @@ public class ChatService {
 	 * token.getEndIndex(), token.getMorph(), token.getPos()); }
 	 */
 	public List<Token> Komoran(String message) {
-		Komoran komoran =new Komoran(DEFAULT_MODEL.FULL);
+		Komoran komoran = new Komoran(DEFAULT_MODEL.FULL);
 		
-		String strToAnalyze=message;
+		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
 		
 				
