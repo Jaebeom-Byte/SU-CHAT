@@ -21,7 +21,7 @@
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
 		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Component" />
+			expression="org.springframework.stereotype.Component." />
 		<!-- 
 			include-filter	: Scan 대상에 포함시켜라.
 			exclude-filter	: Scan 대상에 제외시켜라.

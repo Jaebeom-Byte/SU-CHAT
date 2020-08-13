@@ -1,16 +1,16 @@
-package kr.ac.syu.service;
+package kr.ac.syu.util;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
 import kr.co.shineware.nlp.komoran.core.Komoran;
 import kr.co.shineware.nlp.komoran.model.KomoranResult;
 import kr.co.shineware.nlp.komoran.model.Token;
 
-@Service
-public class AnalyzeService {
+@Component
+public class AnalyzeUtil {
 	/*
 	 * Komoran komoran = new Komoran(DEFAULT_MODEL.FULL); 
 	 * String strToAnalyze =
