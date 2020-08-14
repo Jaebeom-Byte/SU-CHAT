@@ -4,7 +4,7 @@ public class EditDistance {
 
 	public int levenshteinDistance(String word1, String word2) {
 
-		System.out.print(word1 + " | " + word2 + " = ");
+//		System.out.print(word1 + " | " + word2 + " = ");
 
 		
 		word1 = JasoTokenizer.split(word1);
@@ -70,5 +70,13 @@ public class EditDistance {
 		}
 
 		return minimum;
+		
 	}
+	/*
+	 * public static void main(String[] args) { EditDistance edt= new
+	 * EditDistance(); int value = edt.levenshteinDistance("쟝학","장학");
+	 * System.out.print(value);
+	 * 
+	 * }
+	 */
 }
