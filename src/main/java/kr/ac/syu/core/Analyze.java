@@ -10,7 +10,7 @@ import kr.co.shineware.nlp.komoran.model.KomoranResult;
 import kr.co.shineware.nlp.komoran.model.Token;
 
 @Component
-public class AnalyzeUtil {
+public class Analyze {
 	/*
 	 * Komoran komoran = new Komoran(DEFAULT_MODEL.FULL); 
 	 * String strToAnalyze =

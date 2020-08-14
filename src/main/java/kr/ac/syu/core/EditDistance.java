@@ -1,13 +1,14 @@
 package kr.ac.syu.core;
 
-public class EditDistanceUtil {
+public class EditDistance {
 
 	public int levenshteinDistance(String word1, String word2) {
 
 		System.out.print(word1 + " | " + word2 + " = ");
 
-		word1 = JasoTokenizerService.split(word1);
-		word2 = JasoTokenizerService.split(word2);
+		
+		word1 = JasoTokenizer.split(word1);
+		word2 = JasoTokenizer.split(word2);
 
 		int word1_len = word1.length() + 1;
 		int word2_len = word2.length() + 1;
