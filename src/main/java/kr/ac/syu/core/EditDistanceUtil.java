@@ -1,4 +1,4 @@
-package kr.ac.syu.util;
+package kr.ac.syu.core;
 
 public class EditDistanceUtil {
 
