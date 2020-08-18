@@ -10,16 +10,10 @@ import java.util.Set;
 public class Generator {
 	private static Generator generator;
 	private static Properties prop;
-	private static HashMap<String, String> thesaurusMap;
-	private static List<String> thesaurusList;
-	private static List<String> dictionary;
 	private static Set<Object> keys;
 
 	private Generator() {
 		prop = new Properties();
-		dictionary = new ArrayList<String>();
-		thesaurusMap = new HashMap<String, String>();
-		thesaurusList = new ArrayList<String>();
 	}
 	
 	public static Generator getGenerator() {
@@ -30,11 +24,13 @@ public class Generator {
 	}
 
 	public List<String> genarateDictionary(String configName) {	
+		List<String> dictionary = new ArrayList<String>();
 		try {
 			createKeys(configName);
 			for(Object key : keys) {							
 				dictionary.add((String)key);
 			}
+			initProp();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -42,24 +38,28 @@ public class Generator {
 	}
 	
 	public List<String> genarateThesaurusList(String configName) {	
+		List<String> thesaurusList = new ArrayList<String>();
 		try {
 			createKeys(configName);
 			for(Object key : keys) {							
 				thesaurusList.add((String)key);
 			}
+			initProp();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		return thesaurusList;
 	}	
 	
-	public HashMap<String, String> genarateThesaurusMap(String configName) {	
+	public HashMap<String, String> genarateThesaurusMap(String configName) {
+		HashMap<String, String> thesaurusMap = new HashMap<String, String>();
 		try {
 			createKeys(configName);
 			for(Object key : keys) {	
 				String value = prop.getProperty(key.toString());
 				thesaurusMap.put((String)key, value);
 			}
+			initProp();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -76,6 +76,10 @@ public class Generator {
 		prop.load(inputStream);
 		keys = prop.keySet();
 		inputStream.close();
+	}
+	
+	private void initProp() {
+		prop.clear();
 	}
 	
 	/*public static void main(String[] args) {
