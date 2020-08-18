@@ -51,8 +51,8 @@ public class Tokenizer {
 		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
 
-		ArrayList<String> NounList = (ArrayList<String>) analyzeResultList.getMorphesByTags("NNP","NNG");
-		
+		ArrayList<String> NounList = (ArrayList<String>) analyzeResultList.getMorphesByTags("NNP", "NNG");
+
 		// ArrayList<Token> NAList = new ArrayList<Token>();
 		// List<Token> tokenList = analyzeResultList.getTokenList();
 
