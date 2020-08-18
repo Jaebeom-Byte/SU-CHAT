@@ -29,7 +29,7 @@ public class Generator {
 		return generator;
 	}
 
-	public static List<String> genarateDictionary(String configName) {	
+	public List<String> genarateDictionary(String configName) {	
 		try {
 			createKeys(configName);
 			for(Object key : keys) {							
@@ -41,7 +41,7 @@ public class Generator {
 		return dictionary;
 	}
 	
-	public static List<String> genarateThesaurusList(String configName) {	
+	public List<String> genarateThesaurusList(String configName) {	
 		try {
 			createKeys(configName);
 			for(Object key : keys) {							
@@ -53,7 +53,7 @@ public class Generator {
 		return thesaurusList;
 	}	
 	
-	public static HashMap<String, String> genarateThesaurusMap(String configName) {	
+	public HashMap<String, String> genarateThesaurusMap(String configName) {	
 		try {
 			createKeys(configName);
 			for(Object key : keys) {	
@@ -66,13 +66,13 @@ public class Generator {
 		return thesaurusMap;
 	}
 	
-	private static void createKeys(String configName) throws Exception {
+	private void createKeys(String configName) throws Exception {
 		/*
 		 * InputStream inputStream =
 		 * Generator.getClass().getResourceAsStream(configName);
 		 */
 		
-		InputStream inputStream = Generator.class.getResourceAsStream(configName);
+		InputStream inputStream = this.getClass().getResourceAsStream(configName);
 		prop.load(inputStream);
 		keys = prop.keySet();
 		inputStream.close();
