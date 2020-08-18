@@ -12,7 +12,7 @@ import java.util.Map.Entry;
 
 public class Correction {
 
-	public Map<String, Integer> DistanceMaker(List<String> NAList) {
+	public Map<String, Integer> distanceMaker(List<String> NAList) {
 		List<String> NAs = NAList; // NAs이라는 List를 생성해서 parameter 로 받는 NounList의 명사들을 받아놓음
 		EditDistance ExtractLev = new EditDistance(); // 레벤슈타인을 쓰기위해 객체를 생성
 //	Dictionaries dictionaries = new Dictionaries();
@@ -124,7 +124,7 @@ public class Correction {
 		List<String> NAList = new ArrayList<String>();
 		NAList.add("굥학");
 		Correction corect = new Correction();
-		corect.sendCorrectionNA(corect.DistanceMaker(NAList));
+		corect.sendCorrectionNA(corect.distanceMaker(NAList));
 
 	}
 }
