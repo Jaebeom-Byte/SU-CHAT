@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-
 public class Correction {
 
 	public Map<String, Integer> distanceMaker(List<String> NAList) {
@@ -22,16 +21,16 @@ public class Correction {
 
 		List<String> dicts;
 		Generator generator = Generator.getGenerator();
-		
-		dicts=generator.genarateDictionary("/resources/dictionary.properties");
-		dicts=generator.genarateThesaurusList("/resources/thesaurus.properties");
+
+		dicts = generator.genarateDictionary("/resources/dictionary.properties");
+		dicts = generator.genarateThesaurusList("/resources/thesaurus.properties");
 		/*
 		 * dicts.add("컴퓨터"); dicts.add("공학");
-		 */	
-		
+		 */
+
 		// 실험용 dictionaries
 //		Generator generator = new Generator();
-		
+
 		/*
 		 * Map<String, String> dict
 		 * =Generator.genarateThesaurusMap("/resources/thesaurus.properties");
@@ -43,7 +42,6 @@ public class Correction {
 		 * 
 		 * }
 		 */
-		
 
 //	List<String> saurus = thesaurus.getList(); //theSaurus 에서 StringList를 받아옴
 		Map<String, Integer> Calculating = new HashMap<String, Integer>();
@@ -70,10 +68,9 @@ public class Correction {
 			}
 		});
 		// list_entries 가 오름차순 정렬된 맵<단어사전, 거리>
-		
-		
-		for(Entry<String, Integer> entry : list_entries) {
-			if(entry.getValue()<=2) {
+
+		for (Entry<String, Integer> entry : list_entries) {
+			if (entry.getValue() <= 2) {
 				OutPut.put(entry.getKey(), entry.getValue());
 			}
 		}
@@ -82,9 +79,6 @@ public class Correction {
 		 * OutPut.put(entry.getKey(), entry.getValue()); //
 		 * System.out.println(entry.getKey() + " : " + entry.getValue()); break; }
 		 */
-		
-		
-		
 
 		/*
 		 * Iterator<String> mapIter = OutPut.keySet().iterator();
@@ -109,14 +103,12 @@ public class Correction {
 		return OutPut;
 
 	}
-	
-	public List<String> sendCorrectionNA(Map<String, Integer> correctionNA){
-		
-		
-	
+
+	public List<String> sendCorrectionNA(Map<String, Integer> correctionNA) {
+
 		ArrayList<String> keyList = new ArrayList<String>(correctionNA.keySet());
 		System.out.print(keyList.get(0));
-		
+
 		return keyList;
 	}
 
@@ -128,6 +120,3 @@ public class Correction {
 
 	}
 }
-
-
-

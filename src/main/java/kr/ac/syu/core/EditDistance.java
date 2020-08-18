@@ -6,7 +6,6 @@ public class EditDistance {
 
 //		System.out.print(word1 + " | " + word2 + " = ");
 
-		
 		word1 = JasoTokenizer.split(word1);
 		word2 = JasoTokenizer.split(word2);
 
@@ -70,7 +69,7 @@ public class EditDistance {
 		}
 
 		return minimum;
-		
+
 	}
 	/*
 	 * public static void main(String[] args) { EditDistance edt= new
