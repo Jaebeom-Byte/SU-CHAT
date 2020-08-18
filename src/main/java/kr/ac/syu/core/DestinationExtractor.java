@@ -1,6 +1,7 @@
 package kr.ac.syu.core;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class DestinationExtractor {
 	
 	public String printTrimmedNouns(List<String> refinedNouns) throws Exception {
 		mapRefinedOntoTrimmed(refinedNouns);
+		Collections.sort(trimmedNouns);
 		String destinationKeyword = trimmedNouns.toString().replace(" ", "");
 
 		return destinationKeyword;
