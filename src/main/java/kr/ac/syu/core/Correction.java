@@ -11,11 +11,12 @@ import java.util.Map.Entry;
 
 public class Correction {
 
-	public Map<String, Integer> DistanceMaker(List<String> NAList) {
+	public Map<String, Integer> distanceMaker(List<String> NAList) {
 		List<String> NAs = NAList; // NAs이라는 List를 생성해서 parameter 로 받는 NounList의 명사들을 받아놓음
-		EditDistance ExtractLev = new EditDistance(); // 레벤슈타인을 쓰기위해 객체를 생성
-//	Dictionaries dictionaries = new Dictionaries();
-//	TheSauraus thesaurus = new TheSaurus();
+		EditDistance extractLev = new EditDistance(); // 레벤슈타인을 쓰기위해 객체를 생성
+		
+		//	Dictionaries dictionaries = new Dictionaries();
+		//	TheSauraus thesaurus = new TheSaurus();
 
 		// List<String> dict = dictionaries.getList(); //dictionary 에서 StringList를 받아옴
 
@@ -24,23 +25,24 @@ public class Correction {
 		dict.add("장학");
 		dict.add("공지");
 
-//	List<String> saurus = thesaurus.getList(); //theSaurus 에서 StringList를 받아옴
-		Map<String, Integer> Calculating = new HashMap<String, Integer>();
-		Map<String, Integer> OutPut = new HashMap<String, Integer>();
+		// theSaurus 에서 StringList를 받아옴
+		Map<String, Integer> calculating = new HashMap<String, Integer>();
+		Map<String, Integer> outPut = new HashMap<String, Integer>();
 		int totalElementsOfNAs = NAs.size();
 		int totalElementsOfdict = dict.size();
-		int[] distance = new int[100];
+		List<Integer> distance = new ArrayList<Integer>();
+//		int[] distance = new int[100];
 		int count_i = 0;
 		int count_j = 0;
 
 		for (count_i = 0; count_i < totalElementsOfNAs; count_i++) {
 			for (count_j = 0; count_j < totalElementsOfdict; count_j++) {
-				distance[count_j] = ExtractLev.levenshteinDistance(NAs.get(count_i), dict.get(count_j));
-				Calculating.put(dict.get(count_j), distance[count_j]);
-
+				distance.add(extractLev.levenshteinDistance(NAs.get(count_i), dict.get(count_j)), count_j);
+//				distance[count_j] = extractLev.levenshteinDistance(NAs.get(count_i), dict.get(count_j));
+				calculating.put(dict.get(count_j), distance.get(count_j));
 			}
 		}
-		List<Entry<String, Integer>> list_entries = new ArrayList<Entry<String, Integer>>(Calculating.entrySet());
+		List<Entry<String, Integer>> list_entries = new ArrayList<Entry<String, Integer>>(calculating.entrySet());
 		Collections.sort(list_entries, new Comparator<Entry<String, Integer>>() {
 			// compare로 값을 비교
 			public int compare(Entry<String, Integer> obj1, Entry<String, Integer> obj2) {
@@ -51,8 +53,7 @@ public class Correction {
 		// list_entries 가 오름차순 정렬된 맵<단어사전, 거리>
 
 		for (Entry<String, Integer> entry : list_entries) {
-			OutPut.put(entry.getKey(), entry.getValue());
-//		System.out.println(entry.getKey() + " : " + entry.getValue());
+			outPut.put(entry.getKey(), entry.getValue());
 			break;
 		}
 
@@ -68,23 +69,10 @@ public class Correction {
 		 * }
 		 */
 
-		for (String key : OutPut.keySet()) {
-
-			Integer value = OutPut.get(key);
-
+		for (String key : outPut.keySet()) {
+			Integer value = outPut.get(key);
 			System.out.println(key + " : " + value);
-
 		}
-
-		return OutPut;
-
-	}
-
-	public static void main(String[] args) {
-		List<String> NAList = new ArrayList<String>();
-		NAList.add("쟝학");
-		Correction corect = new Correction();
-		corect.DistanceMaker(NAList);
-
+		return outPut;
 	}
 }
