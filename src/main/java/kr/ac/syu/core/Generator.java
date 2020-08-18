@@ -10,7 +10,6 @@ import java.util.Set;
 public class Generator {
 	private static Generator generator;
 	private static Properties prop;
-	private static Set<Object> keys;
 
 	private Generator() {
 		prop = new Properties();
@@ -26,8 +25,7 @@ public class Generator {
 	public List<String> genarateDictionary(String configName) {	
 		List<String> dictionary = new ArrayList<String>();
 		try {
-			createKeys(configName);
-			for(Object key : keys) {							
+			for(Object key : createKeys(configName)) {							
 				dictionary.add((String)key);
 			}
 			initProp();
@@ -40,8 +38,7 @@ public class Generator {
 	public List<String> genarateThesaurusList(String configName) {	
 		List<String> thesaurusList = new ArrayList<String>();
 		try {
-			createKeys(configName);
-			for(Object key : keys) {							
+			for(Object key : createKeys(configName)) {							
 				thesaurusList.add((String)key);
 			}
 			initProp();
@@ -54,8 +51,7 @@ public class Generator {
 	public HashMap<String, String> genarateThesaurusMap(String configName) {
 		HashMap<String, String> thesaurusMap = new HashMap<String, String>();
 		try {
-			createKeys(configName);
-			for(Object key : keys) {	
+			for(Object key : createKeys(configName)) {	
 				String value = prop.getProperty(key.toString());
 				thesaurusMap.put((String)key, value);
 			}
@@ -66,16 +62,16 @@ public class Generator {
 		return thesaurusMap;
 	}
 	
-	private void createKeys(String configName) throws Exception {
+	private Set<Object> createKeys(String configName) throws Exception {
 		/*
 		 * InputStream inputStream =
 		 * Generator.getClass().getResourceAsStream(configName);
 		 */
-		
 		InputStream inputStream = this.getClass().getResourceAsStream(configName);
 		prop.load(inputStream);
-		keys = prop.keySet();
+		Set<Object> keys = prop.keySet();
 		inputStream.close();
+		return keys;
 	}
 	
 	private void initProp() {
