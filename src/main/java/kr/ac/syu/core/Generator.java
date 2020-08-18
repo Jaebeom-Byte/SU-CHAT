@@ -16,54 +16,54 @@ public class Generator {
 	private Generator() {
 		prop = new Properties();
 	}
-	
+
 	public static Generator getGenerator() {
-		if(generator == null) {
+		if (generator == null) {
 			generator = new Generator();
 		}
 		return generator;
 	}
 
-	public List<String> genarateDictionary(String configName) {	
+	public List<String> genarateDictionary(String configName) {
 		List<String> dictionary = new ArrayList<String>();
 		try {
-			for(Object key : createKeys(configName)) {							
-				dictionary.add((String)key);
+			for (Object key : createKeys(configName)) {
+				dictionary.add((String) key);
 			}
 			initProp();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return dictionary;
 	}
-	
-	public List<String> genarateThesaurusList(String configName) {	
+
+	public List<String> genarateThesaurusList(String configName) {
 		List<String> thesaurusList = new ArrayList<String>();
 		try {
-			for(Object key : createKeys(configName)) {							
-				thesaurusList.add((String)key);
+			for (Object key : createKeys(configName)) {
+				thesaurusList.add((String) key);
 			}
 			initProp();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return thesaurusList;
-	}	
-	
+	}
+
 	public HashMap<String, String> genarateThesaurusMap(String configName) {
 		HashMap<String, String> thesaurusMap = new HashMap<String, String>();
 		try {
-			for(Object key : createKeys(configName)) {	
+			for (Object key : createKeys(configName)) {
 				String value = prop.getProperty(key.toString());
-				thesaurusMap.put((String)key, value);
+				thesaurusMap.put((String) key, value);
 			}
 			initProp();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return thesaurusMap;
 	}
-	
+
 	private Set<Object> createKeys(String configName) throws Exception {
 		/*
 		 * InputStream inputStream =
@@ -75,11 +75,11 @@ public class Generator {
 		inputStream.close();
 		return keys;
 	}
-	
+
 	private void initProp() {
 		prop.clear();
 	}
-	
+
 	/*
 	 * public static void main(String[] args) { Generator g = new Generator();
 	 * Map<String, String> dict =
