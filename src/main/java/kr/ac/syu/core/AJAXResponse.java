@@ -2,7 +2,10 @@ package kr.ac.syu.core;
 
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 public class AJAXResponse {
+	
 	private Generator generator = Generator.getGenerator();
 	private DestinationExtractor destinationExtractor = DestinationExtractor.getDestinationExtractor();
 	private MatchingClassFactory matchingClassFactory = MatchingClassFactory.getMatchingClassFactory();
