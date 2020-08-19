@@ -6,7 +6,6 @@ public class AJAXResponse {
 	private Generator generator = Generator.getGenerator();
 	private DestinationExtractor destinationExtractor = DestinationExtractor.getDestinationExtractor();
 	private MatchingClassFactory matchingClassFactory = MatchingClassFactory.getMatchingClassFactory();
-	private Crawling crawling;
 	private String extractedKeword;
 	
 	public String getMessage(String userRequest) {
@@ -22,7 +21,7 @@ public class AJAXResponse {
 			e.printStackTrace();
 		} finally {
 			if(responseMsg == null) {
-				responseMsg = "다시 입력해 주시겠습니까?";
+				responseMsg = "알아들을 수 없습니다.";
 			}
 		}
 		return responseMsg; 
