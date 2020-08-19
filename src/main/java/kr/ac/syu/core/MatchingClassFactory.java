@@ -10,7 +10,7 @@ public class MatchingClassFactory {
 		return matchingClassFactory;
 	}
 
-	public static Crawling getMatchingClass(String mappingKeyword) {
+	public Crawling getMatchingClass(String mappingKeyword) {
 		Crawling mappingClass = null;
 		try {
 			mappingClass = (Crawling)Class.forName(mappingKeyword).newInstance();

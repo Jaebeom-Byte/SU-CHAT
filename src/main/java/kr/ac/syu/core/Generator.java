@@ -63,6 +63,20 @@ public class Generator {
 		}
 		return thesaurusMap;
 	}
+	
+	public HashMap<String, String> genarateKeyword(String configName) {
+		HashMap<String, String> keyword = new HashMap<String, String>();
+		try {
+			for (Object key : createKeys(configName)) {
+				String value = prop.getProperty(key.toString());
+				keyword.put((String) key, value);
+			}
+			initProp();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return keyword;
+	}	
 
 	private Set<Object> createKeys(String configName) throws Exception {
 		/*
