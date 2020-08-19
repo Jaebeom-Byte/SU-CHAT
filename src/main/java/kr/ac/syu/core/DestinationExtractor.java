@@ -15,18 +15,21 @@ public class DestinationExtractor {
 		trimmedNouns = new ArrayList<String>();
 	}
 	
-	public DestinationExtractor getDestinationExtractor() {
+	public static DestinationExtractor getDestinationExtractor() {
 		if(destinationExtractor == null) {
 			destinationExtractor = new DestinationExtractor();
 		}
 		return destinationExtractor;
 	}
 	
-	public String printTrimmedNouns(List<String> refinedNouns) throws Exception {
+	public String printDestinationKeyword(String message) throws Exception {
+		List<String> refinedNouns = Tokenizer.sendNouns(message);
+//		System.out.println("refinedNouns: " + refinedNouns);
 		mapRefinedOntoTrimmed(refinedNouns);
 		Collections.sort(trimmedNouns);
-		String destinationKeyword = trimmedNouns.toString().replace(" ", "");
-
+//		System.out.println("trimmedNouns: " + trimmedNouns);
+		String destinationKeyword = trimmedNouns.toString().replaceAll(" ", "");
+//		System.out.println("destinationKeyword: " + destinationKeyword);
 		return destinationKeyword;
 	}
 
