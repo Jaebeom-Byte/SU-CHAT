@@ -20,13 +20,13 @@ public class ChatAPIController {
 	
 	@Autowired
 	private JSONObject jsonObj;
-	private ResponseProcess ajaxResponse = new ResponseProcess();
+	private ResponseProcess processedResponse = new ResponseProcess();
 	
 	@RequestMapping(value="/ChatAPIController.chat", method=RequestMethod.POST)
 	private void CommunicateMessage(@RequestBody String msg,
 						 HttpServletResponse response) {
 		System.out.println(msg);
-		jsonObj.put("message", ajaxResponse.getMessage(msg));
+		jsonObj.put("message", processedResponse.getMessage(msg));
 		jsonResponseToClient(response, jsonObj);
 	}
 
