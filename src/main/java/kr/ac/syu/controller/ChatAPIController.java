@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import kr.ac.syu.core.AJAXResponse;
+import kr.ac.syu.core.ResponseProcess;
 import kr.ac.syu.core.Tokenizer;
 import net.sf.json.JSONObject;
 
@@ -20,7 +20,7 @@ public class ChatAPIController {
 	
 	@Autowired
 	private JSONObject jsonObj;
-	private AJAXResponse ajaxResponse = new AJAXResponse();
+	private ResponseProcess ajaxResponse = new ResponseProcess();
 	
 	@RequestMapping(value="/ChatAPIController.chat", method=RequestMethod.POST)
 	private void CommunicateMessage(@RequestBody String msg,

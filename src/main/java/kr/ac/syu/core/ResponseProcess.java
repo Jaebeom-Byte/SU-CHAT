@@ -4,7 +4,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
-public class AJAXResponse {
+public class ResponseProcess {
 	
 	private Generator generator = Generator.getGenerator();
 	private DestinationExtractor destinationExtractor = DestinationExtractor.getDestinationExtractor();
