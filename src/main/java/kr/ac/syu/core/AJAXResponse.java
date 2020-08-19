@@ -24,7 +24,7 @@ public class AJAXResponse {
 			e.printStackTrace();
 		} finally {
 			if(responseMsg == null) {
-				responseMsg = "알아들을 수 없습니다.";
+				responseMsg = "주인님, 다시 한 번 말씀해주시겠습니까?";
 			}
 		}
 		return responseMsg; 
