@@ -8,11 +8,11 @@ import java.util.List;
 public class DestinationExtractor {
 	public static DestinationExtractor destinationExtractor;
 	private Generator gen;
-	private List<String> trimmedNouns;
+//	private List<String> trimmedNouns;
 
 	private DestinationExtractor() {
 		gen = Generator.getGenerator();
-		trimmedNouns = new ArrayList<String>();
+//		trimmedNouns = new ArrayList<String>();
 	}
 	
 	public static DestinationExtractor getDestinationExtractor() {
@@ -24,8 +24,9 @@ public class DestinationExtractor {
 	
 	public String getDestinationKeyword(String message) throws Exception {
 		List<String> refinedNouns = Tokenizer.sendNouns(message);
+		List<String> trimmedNouns = mapRefinedOntoTrimmed(refinedNouns);
 		System.out.println("refinedNouns: " + refinedNouns);
-		mapRefinedOntoTrimmed(refinedNouns);
+//		mapRefinedOntoTrimmed(refinedNouns);
 		Collections.sort(trimmedNouns);
 		System.out.println("trimmedNouns: " + trimmedNouns);
 		String destinationKeyword = trimmedNouns.toString().replaceAll(" ", "");
@@ -33,9 +34,10 @@ public class DestinationExtractor {
 		return destinationKeyword;
 	}
 
-	private void mapRefinedOntoTrimmed(List<String> refinedNouns) throws Exception {
+	private List<String> mapRefinedOntoTrimmed(List<String> refinedNouns) throws Exception {
 		List<String> dictionary = gen.genarateDictionary("/resources/dictionary.properties");
 		HashMap<String, String> thesaurus = gen.genarateThesaurusMap("/resources/thesaurus.properties");
+		ArrayList<String> trimmedNouns = new ArrayList<String>();
 		
 		refinedToTrimmed: for (String refinedNoun : refinedNouns) {
 			for (String standardWord : dictionary) {
@@ -51,5 +53,6 @@ public class DestinationExtractor {
 				}
 			}
 		}
+		return trimmedNouns;
 	}
 }
