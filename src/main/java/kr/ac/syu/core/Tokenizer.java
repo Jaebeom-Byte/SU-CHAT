@@ -15,7 +15,8 @@ import kr.co.shineware.nlp.komoran.model.Token;
 public class Tokenizer {
 
 	public static List<String> sendNA(String message) {
-		Komoran komoran = new Komoran(DEFAULT_MODEL.FULL);
+		Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
+//		komoran.setUserDic("/resources/syumoran.user");
 
 		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
@@ -46,12 +47,13 @@ public class Tokenizer {
 	}
 
 	public static List<String> sendNouns(String message) {
-		Komoran komoran = new Komoran(DEFAULT_MODEL.FULL);
+		Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
+//		komoran.setUserDic("/resources/syumoran.user");
 
 		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
 
-		ArrayList<String> NounList = (ArrayList<String>) analyzeResultList.getMorphesByTags("NNP", "NNG");
+		ArrayList<String> nounList = (ArrayList<String>) analyzeResultList.getMorphesByTags("NNP", "NNG");
 
 		// ArrayList<Token> NAList = new ArrayList<Token>();
 		// List<Token> tokenList = analyzeResultList.getTokenList();
@@ -62,13 +64,13 @@ public class Tokenizer {
 		 * 
 		 * for(Token token : NAList) { NounList.add(token.getMorph()); }
 		 */
-		Collections.sort(NounList);
-		int totalElements = NounList.size();// arrayList의 요소의 갯수를 구한다.
+		Collections.sort(nounList);
+		int totalElements = nounList.size();// arrayList의 요소의 갯수를 구한다.
 		for (int index = 0; index < totalElements; index++) {
-			System.out.println(NounList.get(index));
+			System.out.println(nounList.get(index));
 		}
 
-		return NounList;
+		return nounList;
 	}
 
 }

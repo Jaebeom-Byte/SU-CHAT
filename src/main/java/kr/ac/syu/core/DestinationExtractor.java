@@ -24,12 +24,12 @@ public class DestinationExtractor {
 	
 	public String getDestinationKeyword(String message) throws Exception {
 		List<String> refinedNouns = Tokenizer.sendNouns(message);
-//		System.out.println("refinedNouns: " + refinedNouns);
+		System.out.println("refinedNouns: " + refinedNouns);
 		mapRefinedOntoTrimmed(refinedNouns);
 		Collections.sort(trimmedNouns);
-//		System.out.println("trimmedNouns: " + trimmedNouns);
+		System.out.println("trimmedNouns: " + trimmedNouns);
 		String destinationKeyword = trimmedNouns.toString().replaceAll(" ", "");
-//		System.out.println("destinationKeyword: " + destinationKeyword);
+		System.out.println("destinationKeyword: " + destinationKeyword);
 		return destinationKeyword;
 	}
 
