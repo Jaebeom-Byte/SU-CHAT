@@ -1,6 +1,6 @@
 package kr.ac.syu.core;
 
-public class EditDistance {
+public class DistanceEditor {
 
 	public int levenshteinDistance(String word1, String word2) {
 
