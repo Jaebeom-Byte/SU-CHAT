@@ -1,5 +1,7 @@
 package kr.ac.syu.core;
 
+import kr.ac.syu.core.crawler.Crawler;
+
 public class MatchingClassFactory {
 	private static MatchingClassFactory matchingClassFactory;
 	
@@ -10,10 +12,10 @@ public class MatchingClassFactory {
 		return matchingClassFactory;
 	}
 
-	public Crawling getMatchingClass(String mappingKeyword) {
-		Crawling mappingClass = null;
+	public Crawler getMatchingClass(String mappingKeyword) {
+		Crawler mappingClass = null;
 		try {
-			mappingClass = (Crawling)Class.forName(mappingKeyword).newInstance();
+			mappingClass = (Crawler)Class.forName(mappingKeyword).newInstance();
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 			e.printStackTrace();
 		}
