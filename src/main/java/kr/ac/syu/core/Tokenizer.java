@@ -16,7 +16,7 @@ public class Tokenizer {
 
 	public static List<String> sendNA(String message) {
 		Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
-//		komoran.setUserDic("/resources/syumoran.user");
+		komoran.setUserDic("src\\main\\java\\resources\\syumoran.user");
 
 		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
@@ -48,7 +48,7 @@ public class Tokenizer {
 
 	public static List<String> sendNouns(String message) {
 		Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
-//		komoran.setUserDic("/resources/syumoran.user");
+		komoran.setUserDic("src\\main\\java\\resources\\syumoran.user");
 
 		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
@@ -67,7 +67,7 @@ public class Tokenizer {
 		Collections.sort(nounList);
 		int totalElements = nounList.size();// arrayList의 요소의 갯수를 구한다.
 		for (int index = 0; index < totalElements; index++) {
-			System.out.println(nounList.get(index));
+			System.out.println("nounList: " + nounList.get(index));
 		}
 
 		return nounList;
