@@ -6,7 +6,7 @@ public class LinkageTest {
 	public static void main(String[] args) {
 		
 		DestinationExtractor de = DestinationExtractor.getDestinationExtractor();
-		String message = "컴퓨터공학과";
+		String message = "최대학점";
 		String keyword;
 		try {
 			keyword = de.getDestinationKeyword(message);

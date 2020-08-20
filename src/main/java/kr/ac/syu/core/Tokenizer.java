@@ -16,7 +16,8 @@ public class Tokenizer {
 
 	public static List<String> sendNA(String message) {
 		Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
-		komoran.setUserDic("src\\main\\java\\resources\\syumoran.user");
+//		komoran.setUserDic("src/main/java/resources/syumoran.user");
+		komoran.setUserDic("classpath:/resources/syumoran.user");
 
 		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
@@ -48,7 +49,8 @@ public class Tokenizer {
 
 	public static List<String> sendNouns(String message) {
 		Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
-		komoran.setUserDic("src\\main\\java\\resources\\syumoran.user");
+//		komoran.setUserDic("src/main/java/resources/syumoran.user");
+		komoran.setUserDic("classpath:/resources/syumoran.user");
 
 		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
