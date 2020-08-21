@@ -57,12 +57,6 @@ public class Corrector {
 			  }
 
 		  }
-		  
-	
-		  if(confirmed.isEmpty()) {
-			  confirmed.add("null");
-		  }
-
 	     
 	   return confirmed;
 
