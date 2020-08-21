@@ -10,6 +10,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public abstract class CaptureCrawler extends AbstractCrawler {
+	public static final String SAVE_PATH = "C:/selenium";
+	
 	@SuppressWarnings("unused")
 	protected String crawImage(String url, String xpath) {
 		String imagePath = null; 

@@ -2,8 +2,6 @@ package kr.ac.syu.core;
 
 import java.util.Map;
 
-import org.springframework.stereotype.Component;
-
 public class ResponseProcess {
 	
 	private Generator generator = Generator.getGenerator();
