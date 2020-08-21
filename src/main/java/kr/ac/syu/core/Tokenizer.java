@@ -54,7 +54,7 @@ public class Tokenizer {
 		refinedNounList.addAll(nounList);
 		System.out.println(nounList);
 		
-		if(!correctionList.get(0).equals("으앙"))
+		if(!correctionList.get(0).equals("null"))
 		{refinedNounList.addAll(correctionList);}
 		System.out.println(correctionList);
 	

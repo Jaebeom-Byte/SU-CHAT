@@ -60,7 +60,7 @@ public class Corrector {
 		  
 	
 		  if(confirmed.isEmpty()) {
-			  confirmed.add("으앙");
+			  confirmed.add("null");
 		  }
 
 	     
