@@ -3,9 +3,7 @@ package kr.ac.syu.core;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
 import java.util.List;
-
 import java.util.Map.Entry;
 
 import com.google.common.collect.ArrayListMultimap;
@@ -51,35 +49,23 @@ public class Corrector {
 				return obj1.getValue().compareTo(obj2.getValue());
 			}
 		});
-		
-		System.out.println(NAs);
+
 		
 		  for (Entry<String, Integer> entry : list_entries) {
-			  if(entry.getValue()<=2) {
+			  if(entry.getValue()<=3) {
 				  confirmed.add(entry.getKey());
 			  }
-		//  System.out.println(entry.getKey() + " : " + entry.getValue());
+
 		  }
 		  
 	
 		  if(confirmed.isEmpty()) {
-			  confirmed.add("None");
+			  confirmed.add("으앙");
 		  }
-	   for(String see : confirmed) {
-		   System.out.println(see);
-		   
-	   }  
-	    
+
 	     
 	   return confirmed;
 
 	}
-	public static void main(String[] args) {
-		Corrector correction = new Corrector();
-		List<String> NAList = new ArrayList<String>();
-		NAList.add("곯릻띿");
-		
-//		NAList.add("굥학");
-		correction.getCorrection(NAList);
-	}
+
 }

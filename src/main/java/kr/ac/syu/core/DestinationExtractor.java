@@ -23,7 +23,8 @@ public class DestinationExtractor {
 	}
 	
 	public String getDestinationKeyword(String message) throws Exception {
-		List<String> refinedNouns = Tokenizer.sendNouns(message);
+		Tokenizer Tokenizer = new Tokenizer();
+		List<String> refinedNouns = Tokenizer.getNouns(message);
 		List<String> trimmedNouns = mapRefinedOntoTrimmed(refinedNouns);
 		System.out.println("refinedNouns: " + refinedNouns);
 //		mapRefinedOntoTrimmed(refinedNouns);
