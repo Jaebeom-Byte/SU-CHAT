@@ -14,7 +14,7 @@ public class KomoranProvider {
 	public static Komoran getKomoran() {
 		if(komoranProvider == null) {
 			komoranProvider = new Komoran(DEFAULT_MODEL.LIGHT);
-			komoranProvider.setUserDic(getSyumoranPath()); // System.out.println("syumoranPath: " + syumoranPath) 대용
+//			komoranProvider.setUserDic(getSyumoranPath());
 			komoranProvider.setUserDic("C:\\Users\\PC\\Desktop\\web-ws\\SU-CHAT-git\\src\\main\\java\\resources\\syumoran.user");
 			System.out.println("realPath: " + "C:\\Users\\PC\\Desktop\\web-ws\\SU-CHAT-git\\src\\main\\java\\resources\\syumoran.user");
 		}
