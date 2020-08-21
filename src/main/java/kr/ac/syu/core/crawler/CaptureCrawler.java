@@ -11,24 +11,24 @@ import org.openqa.selenium.TakesScreenshot;
 
 public abstract class CaptureCrawler extends AbstractCrawler {
 	public static final String SAVE_PATH = "C:/selenium";
-	
+
 	@SuppressWarnings("unused")
 	protected String crawImage(String url, String xpath) {
-		String imagePath = null; 
+		String imagePath = null;
 		this.url = url;
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
 		screenshot = (TakesScreenshot) driver.findElement(By.xpath(xpath));
-		
+
 		byte[] imageByte = screenshot.getScreenshotAs(OutputType.BYTES);
-		
+
 		FileOutputStream fos = null;
-		
+
 		try {
-			fos = new FileOutputStream(SAVE_PATH + generateImagePath("screenshot"));
+			fos = new FileOutputStream(SAVE_PATH + generateImagePath(xpath));
 			fos.write(imageByte);
-			imagePath = SAVE_PATH + generateImagePath("screenshot");
+			imagePath = SAVE_PATH + generateImagePath(xpath);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -42,10 +42,9 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 		}
 		return imagePath;
 	}
-	
+
 	private String generateImagePath(String xpath) {
-		String fileName = "/";
-		fileName += (xpath + ".png");
+		String fileName = "/" + xpath.replaceAll("[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]", "") + ".png";
 		return fileName;
 	}
 }
