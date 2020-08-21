@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import kr.co.shineware.nlp.komoran.constant.DEFAULT_MODEL;
 import kr.co.shineware.nlp.komoran.core.Komoran;
 import kr.co.shineware.nlp.komoran.model.KomoranResult;
 import kr.co.shineware.nlp.komoran.model.Token;
@@ -16,9 +15,7 @@ public class Tokenizer {
 
 
 	public List<String> getNouns(String message) {
-		Komoran komoran = new Komoran(DEFAULT_MODEL.LIGHT);
-//		komoran.setUserDic("src/main/java/resources/syumoran.user");
-		komoran.setUserDic("classpath:/resources/syumoran.user");
+		Komoran komoran = KomoranProvider.getKomoran();
 
 		String strToAnalyze = message;
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
@@ -63,7 +60,7 @@ public class Tokenizer {
 		 */
 		
 		for(int index=0; index < refinedNounList.size(); index++) {
-			System.out.println(refinedNounList.get(index));
+			System.out.println("Tokenizer.refinedNounList: " + refinedNounList.get(index));
 		}
 		return refinedNounList;
 	}

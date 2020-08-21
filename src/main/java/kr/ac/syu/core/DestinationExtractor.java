@@ -8,11 +8,9 @@ import java.util.List;
 public class DestinationExtractor {
 	public static DestinationExtractor destinationExtractor;
 	private Generator gen;
-//	private List<String> trimmedNouns;
 
 	private DestinationExtractor() {
 		gen = Generator.getGenerator();
-//		trimmedNouns = new ArrayList<String>();
 	}
 	
 	public static DestinationExtractor getDestinationExtractor() {
@@ -26,12 +24,11 @@ public class DestinationExtractor {
 		Tokenizer Tokenizer = new Tokenizer();
 		List<String> refinedNouns = Tokenizer.getNouns(message);
 		List<String> trimmedNouns = mapRefinedOntoTrimmed(refinedNouns);
-		System.out.println("refinedNouns: " + refinedNouns);
-//		mapRefinedOntoTrimmed(refinedNouns);
 		Collections.sort(trimmedNouns);
-		System.out.println("trimmedNouns: " + trimmedNouns);
 		String destinationKeyword = trimmedNouns.toString().replaceAll(" ", "");
-		System.out.println("destinationKeyword: " + destinationKeyword);
+		System.out.println("DestinationExtractor.refinedNouns: " + refinedNouns);
+		System.out.println("DestinationExtractor.trimmedNouns: " + trimmedNouns);
+		System.out.println("DestinationExtractor.destinationKeyword: " + destinationKeyword);
 		return destinationKeyword;
 	}
 
