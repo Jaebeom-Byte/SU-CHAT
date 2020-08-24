@@ -10,8 +10,10 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 public abstract class CaptureCrawler extends AbstractCrawler {
-	public static final String SAVE_PATH = "C:/selenium";
-
+	// 본인 프로젝트 url 넣으세요.
+	public static final String SAVE_PATH = "C:\\Users\\Jaebeom\\Desktop\\web-ws\\su-chat-clone\\webapp\\assets\\images";
+	public static final String RETURN_PATH = "assets/images";
+	
 	@SuppressWarnings("unused")
 	protected String crawImage(String url, String xpath) {
 		String imagePath = null;
@@ -28,7 +30,7 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 		try {
 			fos = new FileOutputStream(SAVE_PATH + generateImagePath(xpath));
 			fos.write(imageByte);
-			imagePath = SAVE_PATH + generateImagePath(xpath);
+			imagePath = RETURN_PATH + generateImagePath(xpath);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
