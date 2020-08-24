@@ -132,6 +132,18 @@ img {
 	width: 92%;
 }
 
+.received_img {
+	display: inline-block;
+	padding: 0 0 0 10px;
+	vertical-align: top;
+	width: 92%;
+/* 	position: relative;
+	overflow: hidden;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover; */
+}
+
 .received_with_msg p {
 	background: #ebebeb none repeat scroll 0 0;
 	border-radius: 3px;
@@ -142,11 +154,26 @@ img {
 	width: 100%;
 }
 
+.received_contents_container {
+	border: 1px solid #ebebeb;
+	border-radius: 3px;
+	width: 57%;
+}
+
+.received_with_img {
+	width: 200px;
+	height: 150px;
+ 	position: relative;
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .time_date {
 	color: #747474;
 	display: block;
 	font-size: 12px;
-	margin: 8px 0 0;
+	margin: 8px 0 8px 0;
 }
 
 .received_with_msg {
@@ -154,7 +181,7 @@ img {
 }
 
 .mesgs {
-	padding: 30px 15px 0 25px;
+	padding: 30px 10px 0 10px;
 	width: 440px;
 }
 
@@ -221,7 +248,7 @@ img {
 	width: 400px;
 	height: 516px;
     background: rgba( 255, 255, 255, 0.8 ) 
-                url('/jchat-python/assets/images/loading-circle.gif')
+                url('/su-chat-clone/webapp/assets/images/loading-circle.gif')
 				50% 50%
                 no-repeat;
 }

@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>SU-CHAT</title>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
 	rel="stylesheet" type="text/css">
-<link href="assets/css/chatbot.css" type="text/css" rel="stylesheet">
+<link href="assets/css/chat.css" type="text/css" rel="stylesheet">
 
 <script>
 	var getDateTime = function() {
@@ -28,23 +28,6 @@
 							   + '<span class="time_date">' + date_time + '</span>'
 							   + '</div>'
 							   + '</div>' )
-		$('.msg_history').scrollTop(
-							$('.msg_history')[0].scrollHeight )
-	}
-
-	var setResponse = function(items) {
-		var date_time = getDateTime()
-		$('.msg_history').append('<div class="incoming_msg">'
-							   + '<div class="incoming_msg_img">'
-							   + '<img src="assets/images/bot-icon.png" alt="SYU BOT">'
-							   + '</div>'
-							   + '<div class="received_msg">'
-							   + '<div class="received_with_msg">'
-							   + '<p><b>' + items.message + '</p></b>'
-							   + '<span class="time_date">' + date_time + '</span>'
-							   + '</div>'
-							   + '</div>'
-							   + '</div>')
 		$('.msg_history').scrollTop(
 							$('.msg_history')[0].scrollHeight )
 	}
@@ -71,7 +54,7 @@
 			contentType: 'application/json',
 			success: function(resdata) {
 				var items = JSON.parse(resdata)
-				setResponse(items)
+				urlTypeParsor(items)
 			},
 			beforeSend: function() {
 				$('.wait').addClass('loading')
@@ -89,13 +72,60 @@
 		if(event.keyCode == 13)
 			postRequestToController()
 	}
+	
+	var urlTypeParsor = function(items) {
+		var url = items.message
+		
+		if(url.includes('.png')) {
+			setImgResponse(items)
+		}
+		else {
+			setResponse(items)
+		}
+	}
+		
+	var setResponse = function(items) {
+		var date_time = getDateTime()
+		$('.msg_history').append('<div class="incoming_msg">'
+							   + '<div class="incoming_msg_img">'
+							   + '<img src="assets/images/bot-icon.png" alt="SU CHAT">'
+							   + '</div>'
+							   + '<div class="received_msg">'
+							   + '<div class="received_with_msg">'
+							   + '<p><b>' + items.message + '</p></b>'
+							   + '<span class="time_date">' + date_time + '</span>'
+							   + '</div>'
+							   + '</div>'
+							   + '</div>')
+		$('.msg_history').scrollTop(
+							$('.msg_history')[0].scrollHeight )
+	}
+	
+	var setImgResponse = function(items) {
+		var date_time = getDateTime()
+		$('.msg_history').append('<div class="incoming_msg">'
+							   + '<div class="incoming_msg_img">'
+							   + '<img src="assets/images/bot-icon.png" alt="SU CHAT">'
+							   + '</div>'
+							   + '<div class="received_img">'
+							   + '<div class="received_contents_container">'
+							   + '<div class="received_with_img" style="background-image: url(' + '\'' + items.message + '\')"' + '>'	
+							   + '</div>'
+							   + '<span class="time_date">' + date_time + '</span>'
+							   + '</div>'
+							   + '</div>'
+							   + '</div>')
+		$('.msg_history').scrollTop(
+							$('.msg_history')[0].scrollHeight )
+	}
+	
 </script>
 </head>
 <body>
 	<div class="container">
 		<div class="mesgs">
 			<div class="mesg_header">
-				<h2>SYU's TALK</h2>
+				<h2>SU TALK</h2>
 			</div>
 			<div class="msg_history">
 				<div class="wait"></div>
