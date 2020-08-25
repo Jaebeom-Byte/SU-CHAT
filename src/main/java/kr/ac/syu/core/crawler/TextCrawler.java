@@ -19,7 +19,7 @@ public abstract class TextCrawler extends AbstractCrawler {
 		    for(WebElement roof : timetable) {
 		    	text += roof.getText();
 		    }
-		    text += "|";
+		    text += '|';
 		}
 		driver.quit();
 		return text;

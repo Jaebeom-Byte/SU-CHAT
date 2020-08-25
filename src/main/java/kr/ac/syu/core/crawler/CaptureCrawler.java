@@ -32,7 +32,7 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 				if(imagePath == null)
 					imagePath = RETURN_PATH + generateImagePath(xpath);
 				else
-					imagePath += "|" + RETURN_PATH + generateImagePath(xpath);
+					imagePath += '|' + RETURN_PATH + generateImagePath(xpath);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {

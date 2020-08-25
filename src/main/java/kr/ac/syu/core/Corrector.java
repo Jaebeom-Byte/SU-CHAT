@@ -10,24 +10,19 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
 public class Corrector {
-	// List<Map<String, Integer>>로 리턴
 	public List<String> getCorrection(List<String> NAList) {
-		List<String> NAs = NAList; // NAs이라는 List를 생성해서 parameter 로 받는 NounList의 명사들을 받아놓음
+		List<String> NAs = NAList;
 		List<String> confirmed = new ArrayList<>();
 
 		Multimap<String, Integer> storage = ArrayListMultimap.create();
 
-		DistanceEditor ExtractLev = new DistanceEditor(); // 레벤슈타인을 쓰기위해 객체를 생성
+		DistanceEditor ExtractLev = new DistanceEditor();
 
 		List<String> dicts = new ArrayList<>();
-		List<String> dicts1;
-		List<String> dicts2;
 		Generator generator = Generator.getGenerator();
 
-		dicts1 = generator.genarateDictionary("/resources/dictionary.properties");
-		dicts2 = generator.genarateThesaurusList("/resources/thesaurus.properties");
-		dicts.addAll(dicts1);
-		dicts.addAll(dicts2);
+		dicts.addAll(generator.genarateDictionary("/resources/dictionary.properties"));
+		dicts.addAll(generator.genarateThesaurusList("/resources/thesaurus.properties"));
 		List<Integer> distance = new ArrayList<Integer>();
 
 		int totalElementsOfNAs = NAs.size();
@@ -43,9 +38,7 @@ public class Corrector {
 
 		List<Entry<String, Integer>> list_entries = new ArrayList<Entry<String, Integer>>(storage.entries());
 		Collections.sort(list_entries, new Comparator<Entry<String, Integer>>() {
-			// compare로 값을 비교
 			public int compare(Entry<String, Integer> obj1, Entry<String, Integer> obj2) {
-				// 오름 차순 정렬
 				return obj1.getValue().compareTo(obj2.getValue());
 			}
 		});
@@ -57,5 +50,4 @@ public class Corrector {
 		}
 		return confirmed;
 	}
-
 }

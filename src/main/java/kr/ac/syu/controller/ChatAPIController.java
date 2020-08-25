@@ -18,17 +18,20 @@ import net.sf.json.JSONObject;
 @Controller
 public class ChatAPIController {
 	
-	@Autowired
-	private JSONObject jsonObj;
 	private ResponseProcess processedResponse = new ResponseProcess();
 	
 	@RequestMapping(value="/ChatAPIController.chat", method=RequestMethod.POST)
 	private void communicateMessage(@RequestBody String msg,
 						 			HttpServletResponse response) {
-		jsonObj.put("message", processedResponse.getMessage(msg));
-		jsonResponseToClient(response, jsonObj);
+		jsonResponseToClient(response, packMessage(processedResponse.getMessage(msg)));
 	}
-
+	
+	private JSONObject packMessage(String msgs) {
+		JSONObject jsonObj = new JSONObject();
+		jsonObj.put("messages", msgs.split("\\|"));
+		return jsonObj;
+	}
+	
 	private void jsonResponseToClient(HttpServletResponse response, JSONObject jsonObj) {
 		PrintWriter out = null;
 		try {
