@@ -1,0 +1,10 @@
+package kr.ac.syu.crawler.homepage;
+
+import kr.ac.syu.core.crawler.URLSender;
+
+public class Fn extends URLSender { // 식품 영양
+	@Override
+	public String process() {
+		return linkPass("https://www.syu.ac.kr/fn/");
+	}
+}
