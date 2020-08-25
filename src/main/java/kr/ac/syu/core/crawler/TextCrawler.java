@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public abstract class TextCrawler extends AbstractCrawler {
 	@SuppressWarnings("unused")
-	protected String crawMultiText(String url, String ... xpaths) {
+	protected String crawText(String url, String ... xpaths) {
 		String text = "";
 		this.url = url;
 		driver.get(url);
