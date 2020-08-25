@@ -13,7 +13,6 @@ import kr.co.shineware.nlp.komoran.model.Token;
 @Component
 public class Tokenizer {
 
-
 	public List<String> getNouns(String message) {
 		Komoran komoran = KomoranProvider.getKomoran();
 
@@ -21,12 +20,11 @@ public class Tokenizer {
 		KomoranResult analyzeResultList = komoran.analyze(strToAnalyze);
 
 		ArrayList<String> nounList = (ArrayList<String>) analyzeResultList.getMorphesByTags("NNP", "NNG");
-		//----------------------------
+		// ----------------------------
 		ArrayList<String> toPassList = new ArrayList<String>();
 		ArrayList<Token> NAList = new ArrayList<Token>();
 		List<Token> tokenList = analyzeResultList.getTokenList();
-		
-		
+
 		for (Token token : tokenList) {
 
 			if (token.getPos().equals("NA")) {
@@ -34,38 +32,25 @@ public class Tokenizer {
 			}
 		}
 
-
 		for (Token token : NAList) {
 			toPassList.add(token.getMorph());
 		}
-		
+
 		Corrector correction = new Corrector();
-		List<String> correctionList =  correction.getCorrection(toPassList);
-		
+		List<String> correctionList = correction.getCorrection(toPassList);
+
 		List<String> refinedNounList = new ArrayList<>();
-		
-	
+
 		refinedNounList.addAll(nounList);
-//		System.out.println(nounList);
-		
-		
+
 		refinedNounList.addAll(correctionList);
-//		System.out.println(correctionList);
-	
-		//--------------------
-		
+
 		Collections.sort(refinedNounList);
-		/*
-		 * for(String nouns : refinedNounList) { System.out.println(nouns); }
-		 */
-		
-		for(int index=0; index < refinedNounList.size(); index++) {
+
+		for (int index = 0; index < refinedNounList.size(); index++) {
 			System.out.println("Tokenizer.refinedNounList: " + refinedNounList.get(index));
 		}
 		return refinedNounList;
 	}
 
-	
-	 
 }
-
