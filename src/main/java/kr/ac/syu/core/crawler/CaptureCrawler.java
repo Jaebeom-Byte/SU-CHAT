@@ -15,31 +15,35 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 	public static final String RETURN_PATH = "assets/images";
 	
 	@SuppressWarnings("unused")
-	protected String crawImage(String url, String xpath) {
+	protected String crawImage(String url, String ... xpaths) {
 		String imagePath = null;
 		this.url = url;
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		
+		for(String xpath : xpaths) {
+			screenshot = (TakesScreenshot) driver.findElement(By.xpath(xpath));
+			byte[] imageByte = screenshot.getScreenshotAs(OutputType.BYTES);	
+			FileOutputStream fos = null;
 
-		screenshot = (TakesScreenshot) driver.findElement(By.xpath(xpath));
-
-		byte[] imageByte = screenshot.getScreenshotAs(OutputType.BYTES);
-
-		FileOutputStream fos = null;
-
-		try {
-			fos = new FileOutputStream(SAVE_PATH + generateImagePath(xpath));
-			fos.write(imageByte);
-			imagePath = RETURN_PATH + generateImagePath(xpath);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
 			try {
-				fos.close();
+				fos = new FileOutputStream(SAVE_PATH + generateImagePath(xpath));
+				fos.write(imageByte);
+				if(imagePath == null)
+					imagePath = RETURN_PATH + generateImagePath(xpath);
+				else
+					imagePath += "|" + RETURN_PATH + generateImagePath(xpath);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
+			} finally {
+				driver.quit();
+				try {
+					fos.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 		return imagePath;
