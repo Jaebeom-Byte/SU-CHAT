@@ -38,7 +38,6 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 			} catch (IOException e) {
 				e.printStackTrace();
 			} finally {
-				driver.quit();
 				try {
 					fos.close();
 				} catch (IOException e) {
@@ -46,6 +45,7 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 				}
 			}
 		}
+		driver.quit();
 		return imagePath;
 	}
 
