@@ -15,8 +15,8 @@ public class KomoranProvider {
 		if(komoranProvider == null) {
 			komoranProvider = new Komoran(DEFAULT_MODEL.LIGHT);
 //			komoranProvider.setUserDic(getSyumoranPath());
-			//이곳에 자신의 경로를 입력하세요
-			komoranProvider.setUserDic("C:\\~\\syumoran.user");
+//			이곳에 자신의 경로를 입력하세요
+			komoranProvider.setUserDic("C:\\Users\\Jaebeom\\Desktop\\web-ws\\su-chat-clone\\src\\main\\java\\resources\\syumoran.user");
 			System.out.println("realPath: " + "비교해볼 사람은 자신의 경로를 이곳에 입력하시오");
 		}
 		return komoranProvider;

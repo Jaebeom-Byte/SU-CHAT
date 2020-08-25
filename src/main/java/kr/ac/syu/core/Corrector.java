@@ -17,19 +17,14 @@ public class Corrector {
 
 		Multimap<String, Integer> storage = ArrayListMultimap.create();
 
-		DistanceEditor extractLev = new DistanceEditor(); // 레벤슈타인을 쓰기위해 객체를 생성
+		DistanceEditor ExtractLev = new DistanceEditor(); // 레벤슈타인을 쓰기위해 객체를 생성
 
-		List<String> dicts = new ArrayList<>();
-		List<String> dicts1;
-		List<String> dicts2;
-		Generator gen = Generator.getGenerator();
+		List<String> dicts;
+		Generator generator = Generator.getGenerator();
 
-		dicts1 = gen.genarateDictionary("/resources/dictionary.properties");
+		dicts = generator.genarateDictionary("/resources/dictionary.properties");
+		dicts = generator.genarateThesaurusList("/resources/thesaurus.properties");
 
-		dicts2 = gen.genarateThesaurusList("/resources/thesaurus.properties");
-		dicts.addAll(dicts1);
-		dicts.addAll(dicts2);
-		System.out.println(dicts);
 		List<Integer> distance = new ArrayList<Integer>();
 
 		int totalElementsOfNAs = NAs.size();
@@ -37,7 +32,7 @@ public class Corrector {
 		int index = 0;
 		for (int count_i = 0; count_i < totalElementsOfNAs; count_i++) {
 			for (int count_j = 0; count_j < totalElementsOfdict; count_j++) {
-				distance.add(extractLev.levenshteinDistance(NAs.get(count_i), dicts.get(count_j)));
+				distance.add(ExtractLev.levenshteinDistance(NAs.get(count_i), dicts.get(count_j)));
 				storage.put(dicts.get(count_j), distance.get(index));
 				index++;
 			}
@@ -56,11 +51,8 @@ public class Corrector {
 			if (entry.getValue() <= 3) {
 				confirmed.add(entry.getKey());
 			}
-
 		}
-
 		return confirmed;
-
 	}
 
 }

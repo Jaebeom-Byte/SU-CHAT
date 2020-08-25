@@ -118,7 +118,6 @@
 		$('.msg_history').scrollTop(
 							$('.msg_history')[0].scrollHeight )
 	}
-	
 </script>
 </head>
 <body>

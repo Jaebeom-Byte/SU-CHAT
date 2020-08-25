@@ -245,10 +245,10 @@ img {
 .loading {
 	position: fixed;
 	z-index: 999;
-	width: 400px;
-	height: 516px;
+	width: 440px;
+	height: 100%;
     background: rgba( 255, 255, 255, 0.8 ) 
-                url('/su-chat-clone/webapp/assets/images/loading-circle.gif')
+                url('/su-chat/assets/images/loading-circle.gif')
 				50% 50%
                 no-repeat;
 }
