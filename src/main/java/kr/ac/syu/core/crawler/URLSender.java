@@ -3,9 +3,9 @@ package kr.ac.syu.core.crawler;
 
 public abstract class URLSender extends AbstractCrawler {
 	protected String linkPass(String url) {
-		String text = "";
+		String link = "";
 		this.url = url;
-		text = url;	
-		return text;
+		link = url;	
+		return link;
 	}
 }
