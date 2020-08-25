@@ -19,12 +19,15 @@ public class Corrector {
 
 		DistanceEditor ExtractLev = new DistanceEditor(); // 레벤슈타인을 쓰기위해 객체를 생성
 
-		List<String> dicts;
+		List<String> dicts = new ArrayList<>();
+		List<String> dicts1;
+		List<String> dicts2;
 		Generator generator = Generator.getGenerator();
 
-		dicts = generator.genarateDictionary("/resources/dictionary.properties");
-		dicts = generator.genarateThesaurusList("/resources/thesaurus.properties");
-
+		dicts1 = generator.genarateDictionary("/resources/dictionary.properties");
+		dicts2 = generator.genarateThesaurusList("/resources/thesaurus.properties");
+		dicts.addAll(dicts1);
+		dicts.addAll(dicts2);
 		List<Integer> distance = new ArrayList<Integer>();
 
 		int totalElementsOfNAs = NAs.size();
