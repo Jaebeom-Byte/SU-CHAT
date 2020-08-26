@@ -157,7 +157,7 @@ img {
 .received_contents_container {
 	border: 1px solid #ebebeb;
 	border-radius: 3px;
-	width: 57%;
+	width: 80%;
 	overflow: hidden;
 }
 
@@ -183,7 +183,7 @@ img {
 
 .mesgs {
 	padding: 30px 10px 0 10px;
-	width: 100%;
+	width: 440px;
 }
 
 .sent_msg p {

@@ -1,8 +1,12 @@
 package kr.ac.syu.core.crawler;
 
-public abstract class URLSender implements Crawler {
-	protected String packLink(String url) {
-		String link = "<a href=\"" + url + "\">" + "바로가기</a>";
+import kr.ac.syu.core.crawler.AbstractCrawler;
+
+public abstract class URLSender extends AbstractCrawler {
+	protected String linkPass(String url) {
+		String link = "";
+		this.url = url;
+		link = url;	
 		return link;
 	}
 }
