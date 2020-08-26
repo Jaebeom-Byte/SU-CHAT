@@ -2,7 +2,7 @@ package kr.ac.syu.crawler.ConvenientFacilities;
 
 import kr.ac.syu.core.crawler.URLSender;
 
-public class Cradle extends URLSender { //요람
+public class Brochure extends URLSender { //요람
 	@Override
 	public String process() {
 		return packLink("https://www.syu.ac.kr/about-sahmyook/regulations-and-cradles/cradle/");

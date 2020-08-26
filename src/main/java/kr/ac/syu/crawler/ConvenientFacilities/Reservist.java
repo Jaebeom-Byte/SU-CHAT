@@ -2,7 +2,7 @@ package kr.ac.syu.crawler.ConvenientFacilities;
 
 import kr.ac.syu.core.crawler.URLSender;
 
-public class MilitaryInformation extends URLSender { //예비군
+public class Reservist extends URLSender { //예비군
 	
 	@Override
 	public String process() {

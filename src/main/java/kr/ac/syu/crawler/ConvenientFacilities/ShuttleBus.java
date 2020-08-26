@@ -2,7 +2,7 @@ package kr.ac.syu.crawler.ConvenientFacilities;
 
 import kr.ac.syu.core.crawler.CaptureCrawler;
 
-public class SchoolBus extends CaptureCrawler{
+public class ShuttleBus extends CaptureCrawler{
 	@Override
 	public String process() {
 		return crawImage("https://www.syu.ac.kr/school-life/school-bus/"
