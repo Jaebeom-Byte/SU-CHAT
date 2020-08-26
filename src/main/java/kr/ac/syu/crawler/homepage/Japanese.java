@@ -5,6 +5,6 @@ import kr.ac.syu.core.crawler.URLSender;
 public class Japanese extends URLSender {
 	@Override
 	public String process() {
-		return linkPass("https://www.syu.ac.kr/japanese/");
+		return packLink("https://www.syu.ac.kr/japanese/");
 	}
 }

@@ -5,6 +5,6 @@ import kr.ac.syu.core.crawler.URLSender;
 public class SyuHealth extends URLSender {
 	@Override
 	public String process() {
-		return linkPass("https://www.syu.ac.kr/chinese/");
+		return packLink("https://www.syu.ac.kr/chinese/");
 	}
 }
