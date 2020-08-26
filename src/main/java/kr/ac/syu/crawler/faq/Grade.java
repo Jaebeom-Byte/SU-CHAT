@@ -5,6 +5,6 @@ import kr.ac.syu.core.crawler.URLSender;
 public class Grade extends URLSender { //성적
 	@Override
 	public String process() {
-		return linkPass("https://www.syu.ac.kr/academic/faq/?t=%EC%A1%B8%EC%97%85");
+		return packLink("https://www.syu.ac.kr/academic/faq/?t=%EC%A1%B8%EC%97%85");
 	}
 }

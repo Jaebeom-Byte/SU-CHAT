@@ -5,6 +5,6 @@ import kr.ac.syu.core.crawler.URLSender;
 public class Comp extends URLSender { // 메카트로닉스
 	@Override
 	public String process() {
-		return linkPass("https://www.syu.ac.kr/comp/");
+		return packLink("https://www.syu.ac.kr/comp/");
 	}
 }

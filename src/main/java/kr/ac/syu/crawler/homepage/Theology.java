@@ -5,6 +5,6 @@ import kr.ac.syu.core.crawler.URLSender;
 public class Theology extends URLSender {
 	@Override
 	public String process() {
-		return linkPass("https://www.syu.ac.kr/theology/");
+		return packLink("https://www.syu.ac.kr/theology/");
 	}
 }

@@ -5,6 +5,6 @@ import kr.ac.syu.core.crawler.URLSender;
 public class Suwings extends URLSender { //suwings연결
 	@Override
 	public String process() {
-		return linkPass("https://suwings.syu.ac.kr/sso/login.jsp");
+		return packLink("https://suwings.syu.ac.kr/sso/login.jsp");
 	}
 }

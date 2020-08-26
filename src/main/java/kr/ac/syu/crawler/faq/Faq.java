@@ -5,6 +5,6 @@ import kr.ac.syu.core.crawler.URLSender;
 public class Faq extends URLSender { //자주묻는질문
 	@Override
 	public String process() {
-		return linkPass("https://www.syu.ac.kr/academic/faq/");
+		return packLink("https://www.syu.ac.kr/academic/faq/");
 	}
 }
