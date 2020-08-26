@@ -2,9 +2,9 @@ package kr.ac.syu.crawler.homepage;
 
 import kr.ac.syu.core.crawler.URLSender;
 
-public class Sw extends URLSender {
+public class ArtAndDesign extends URLSender { // 아트앤디자인
 	@Override
 	public String process() {
-		return packLink("https://www.syu.ac.kr/sw/");
+		return packLink("https://www.syu.ac.kr/arts/");
 	}
 }

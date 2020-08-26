@@ -2,9 +2,9 @@ package kr.ac.syu.crawler.homepage;
 
 import kr.ac.syu.core.crawler.URLSender;
 
-public class Envdh extends URLSender { //환경디자인원예
+public class Nursing extends URLSender {
 	@Override
 	public String process() {
-		return packLink("https://www.syu.ac.kr/envdh/");
+		return packLink("https://www.syu.ac.kr/nursing/");
 	}
 }

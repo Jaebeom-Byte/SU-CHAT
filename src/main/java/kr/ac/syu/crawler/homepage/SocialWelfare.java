@@ -2,9 +2,9 @@ package kr.ac.syu.crawler.homepage;
 
 import kr.ac.syu.core.crawler.URLSender;
 
-public class Couns extends URLSender { // 상담심리
+public class SocialWelfare extends URLSender {
 	@Override
 	public String process() {
-		return packLink("https://www.syu.ac.kr/couns/");
+		return packLink("https://www.syu.ac.kr/sw/");
 	}
 }
