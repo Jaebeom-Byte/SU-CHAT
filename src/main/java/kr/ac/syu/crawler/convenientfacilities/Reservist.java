@@ -1,4 +1,4 @@
-package kr.ac.syu.crawler.ConvenientFacilities;
+package kr.ac.syu.crawler.convenientfacilities;
 
 import kr.ac.syu.core.crawler.URLSender;
 
