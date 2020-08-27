@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.regex.Pattern;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
@@ -26,15 +27,18 @@ public class Corrector {
 		dicts.addAll(generator.genarateThesaurusList("/resources/thesaurus.properties"));
 		List<Integer> distance = new ArrayList<Integer>();
 		
-		
+		String pattern = "^[a-zA-Z]*$";
 		for (Iterator<String> it = dicts.iterator(); it.hasNext();) {
 			String value = it.next();
-			if (value.equals("ATM") || value.equals("FAQ") || value.equals("DB") || value.equals("F")
-					|| value.equals("FA") || value.equals("IT") || value.equals("LMS")) {
+			 boolean i = Pattern.matches(pattern,value);
+			 if(i==true){
 				it.remove();
 			}
 		}
-		
+		System.out.println(dicts);
+		/*^[a-zA-Z]*$
+		value.equals("ATM") || value.equals("FAQ") || value.equals("DB") || value.equals("F")
+		|| value.equals("FA") || value.equals("IT") || value.equals("LMS")*/
 		int totalElementsOfNAs = NAs.size();
 		int totalElementsOfdict = dicts.size();
 		int index = 0;
