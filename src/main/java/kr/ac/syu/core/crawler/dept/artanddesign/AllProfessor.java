@@ -12,7 +12,8 @@ public class AllProfessor extends TextCrawler {
 				"//*[@id=\"post-54\"]/div[2]/ul/li[4]/div/div[1]",
 				"//*[@id=\"post-54\"]/div[2]/ul/li[5]/div/div[1]",
 				"//*[@id=\"post-54\"]/div[2]/ul/li[6]/div/div[1]",
-				"//*[@id=\"post-54\"]/div[2]/ul/li[7]/div/div[1]"
+				"//*[@id=\"post-54\"]/div[2]/ul/li[7]/div/div[1]",
+				"//*[@id=\"post-54\"]/div[2]/ul/li[8]/div/div[1]"
 		);
 	}
 }
