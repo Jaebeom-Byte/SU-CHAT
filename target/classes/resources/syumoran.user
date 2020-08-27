@@ -1,4 +1,282 @@
-벱벱	NNP
-뛔뛔	NNP
+#just syumoran
+수윙스	NNP
+이클래스	NNP
+E-CLASS	NNP
+파인하우스	NNP
+커리	NNP
+컴과	NNP
+메카트로닉스	NNP
+메카	NNP
+
+#줄임말/약어
+디비	NNP
+파인	NNP
+총학	NNP
+
+#같은 어절 내 형태소 통합 > [입학,처] >> [입학처]
+입학처	NNP
+편의점	NNP
+폐강	NNP
+총대의원회	NNP
+싸이트	NNP
+복사실	NNP
+
+#다른 두 어절 형태소 통합 > in thesaurus 수강 신청:[수강,신청] >> 수강신청:[수강신청]
+계절 학기	NNP
+계절학기	NNP
+교내 근로	NNP
+교내근로	NNP
+교육 과정	NNP
+교육과정	NNP
+국가 근로	NNP
+국가근로	NNP
+상대 평가	NNP
+상대평가	NNP
+수강 신청	NNP
+수강신청	NNP
+절대 평가	NNP
+절대평가	NNP
+학점 교류	NNP
+학점교류	NNP
+
+#학과 형태소 통합
+경영 정보	NNP
+경영정보	NNP
+유아 교육	NNP
+유아교육	NNP
+글로벌 한국	NNP
+글로벌한국	NNP
+물리 치료	NNP
+물리치료	NNP
+식품 영양	NNP
+식품영양	NNP
+사회 복지	NNP
+사회복지	NNP
+보건 관리	NNP
+보건관리	NNP
+상담 심리	NNP
+상담심리	NNP
+생활 체육	NNP
+생활체육	NNP
+화학 생명 과학	NNP
+화학생명 과학	NNP
+화학 생명과학	NNP
+화학생명과학	NNP
+환경 디자인 원예	NNP
+환경디자인 원예	NNP
+환경 디자인원예	NNP
+환경디자인원예	NNP
+동물 생명 자원	NNP
+동물생명 자원	NNP
+동물 생명자원	NNP
+동물생명자원	NNP
+컴퓨터 공학부	NNP
+컴퓨터공학부	NNP
+IT 융합	NNP
+IT융합	NNP
+아이티 융합	NNP
+아이티융합	NNP
+컴퓨터 메카트로닉스	NNP
+컴퓨터메카트로닉스	NNP
+아트 앤 디자인	NNP
+아트앤 디자인	NNP
+아트 앤디자인	NNP
+아트앤디자인	NNP
+
+#학과 줄임말
+중어	NNP
+일어	NNP
+경정	NNP
+영문과	NNP
+유교과	NNP
+글한	NNP
+물치	NNP
+식영	NNP
+사복	NNP
+상심	NNP
+생체	NNP
+약대	NNP
+화생	NNP
+환디	NNP
+동생자	NNP
 컴공	NNP
-최대학점	NNP
+아융	NNP
+컴메	NNP
+컴메카	NNP
+음대	NNP
+미대	NNP
+아탠디	NNP
+
+#교수이름
+#신학
+김상래	NNP
+김원곤 	NNP
+김은배 	NNP
+김일목 	NNP
+박춘식 	NNP
+봉원영 	NNP
+송창호 	NNP
+유동기 	NNP
+이국헌 	NNP
+제해종 	NNP
+최경천 	NNP
+하계상 	NNP
+#영어
+#Danielle 	NNP
+#Hyon 	NNP
+#Ruby 	NNP
+김용성 	NNP
+신한나 	NNP
+장용선 	NNP
+최경룡 	NNP
+#중국어
+김낙철 	NNP
+박민수 	NNP
+안병삼 	NNP
+#일본어
+손숙자 	NNP
+유예진 	NNP
+장성숙 	NNP
+#경영
+김지영 	NNP
+박철주 	NNP
+임명성 	NNP
+임태종 	NNP
+정태석 	NNP
+조광현 	NNP
+최승년 	NNP
+황혜미 	NNP
+#경영정보
+서윤원 	NNP
+신용재 	NNP
+오덕신 	NNP
+최민석 	NNP
+최성욱 	NNP
+#유아교육
+김길숙 	NNP
+김정미 	NNP
+신지연 	NNP
+이유진 	NNP
+최수동 	NNP
+최지영 	NNP
+#글로벌한국
+김봉근 	NNP
+음영철 	NNP
+#식품영양
+신경옥 	NNP
+윤미은 	NNP
+한경식 	NNP
+#물리치료
+김청훈 	NNP
+송창호 	NNP
+이미영 	NNP
+이병희 	NNP
+이석민 	NNP
+이승원 	NNP
+이완희 	NNP
+이용우 	NNP
+임종은 	NNP
+정이정 	NNP
+#보건관리
+김주영 	NNP
+손애리 	NNP
+송태민 	NNP
+유재현 	NNP
+#사회복지
+김범준 	NNP
+노기남 	NNP
+모상현 	NNP
+배숙경 	NNP
+윤재영 	NNP
+장순욱 	NNP
+정종화 	NNP
+조미숙 	NNP
+#상담심리
+#Peters 	NNP
+박종환 	NNP
+서경현 	NNP
+이건호 	NNP
+이금선 	NNP
+정구철 	NNP
+정성진 	NNP
+#생활체육
+김은경 	NNP
+박승순 	NNP
+박재인 	NNP
+이재구 	NNP
+#간호
+강경아 	NNP
+김일옥 	NNP
+김지현 	NNP
+김현영 	NNP
+신선화 	NNP
+신성례 	NNP
+오복자 	NNP
+정현철 	NNP
+한숙정 	NNP
+#화학생명과학
+#WAMINAL 	NNP
+고원배 	NNP
+김남정 	NNP
+김민경 	NNP
+김현희 	NNP
+박명환 	NNP
+유구용 	NNP
+이동섭 	NNP
+최종완 	NNP
+황윤정 	NNP
+#환경디자인원예
+김경남 	NNP
+김유선 	NNP
+남상용 	NNP
+류병열 	NNP
+소창호 	NNP
+조치웅 	NNP
+#동물생명자원
+공현석 	NNP
+전우민 	NNP
+정훈 	NNP
+#컴퓨터공학
+고장혁 	NNP
+김광락 	NNP
+김성완 	NNP
+김정숙 	NNP
+김현규 	NNP
+김희완 	NNP
+정수목 	NNP
+조양현 	NNP
+#IT융합
+류한철 	NNP
+양민규 	NNP
+최선순 	NNP
+#건축
+#Seungwook 	NNP
+정승욱 	NNP
+권혜주 	NNP
+류수현 	NNP
+류한국 	NNP
+박은수 	NNP
+이규일 	NNP
+이태은 	NNP
+정공호 	NNP
+정주홍 	NNP
+#아트앤디자인
+전종범 	NNP
+김성운 	NNP
+김영안 	NNP
+김용선 	NNP
+서정미 	NNP
+이은미 	NNP
+이장미 	NNP
+주미경 	NNP
+#음악
+김수진 	NNP
+김은애 	NNP
+김철호 	NNP
+박정양 	NNP
+오혜전 	NNP
+유병혜 	NNP
+임봉순 	NNP
+임형준 	NNP
+조대명 	NNP
+최선주 	NNP

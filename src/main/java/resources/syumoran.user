@@ -3,30 +3,91 @@
 이클래스	NNP
 E-CLASS	NNP
 파인하우스	NNP
-
-#형태소 붙이기
-#수강신청	NNP
-#상대평가	NNP
-#절대평가	NNP
-#계절학기	NNP
-#학점교류	NNP
-#국가근로	NNP
-#교내근로	NNP
-#교육과정	NNP
-입학처	NNP
-편의점	NNP
-폐강	NNP
-총대의원회	NNP
+커리	NNP
+컴과	NNP
+메카트로닉스	NNP
+메카	NNP
 
 #줄임말/약어
 디비	NNP
 파인	NNP
 총학	NNP
 
+#같은 어절 내 형태소 통합 > [입학,처] >> [입학처]
+입학처	NNP
+편의점	NNP
+폐강	NNP
+총대의원회	NNP
+싸이트	NNP
+복사실	NNP
+
+#다른 두 어절 형태소 통합 > in thesaurus 수강 신청:[수강,신청] >> 수강신청:[수강신청]
+계절 학기	NNP
+계절학기	NNP
+교내 근로	NNP
+교내근로	NNP
+교육 과정	NNP
+교육과정	NNP
+국가 근로	NNP
+국가근로	NNP
+상대 평가	NNP
+상대평가	NNP
+수강 신청	NNP
+수강신청	NNP
+절대 평가	NNP
+절대평가	NNP
+학점 교류	NNP
+학점교류	NNP
+
+#학과 형태소 통합
+경영 정보	NNP
+경영정보	NNP
+유아 교육	NNP
+유아교육	NNP
+글로벌 한국	NNP
+글로벌한국	NNP
+물리 치료	NNP
+물리치료	NNP
+식품 영양	NNP
+식품영양	NNP
+사회 복지	NNP
+사회복지	NNP
+보건 관리	NNP
+보건관리	NNP
+상담 심리	NNP
+상담심리	NNP
+생활 체육	NNP
+생활체육	NNP
+화학 생명 과학	NNP
+화학생명 과학	NNP
+화학 생명과학	NNP
+화학생명과학	NNP
+환경 디자인 원예	NNP
+환경디자인 원예	NNP
+환경 디자인원예	NNP
+환경디자인원예	NNP
+동물 생명 자원	NNP
+동물생명 자원	NNP
+동물 생명자원	NNP
+동물생명자원	NNP
+컴퓨터 공학부	NNP
+컴퓨터공학부	NNP
+IT 융합	NNP
+IT융합	NNP
+아이티 융합	NNP
+아이티융합	NNP
+컴퓨터 메카트로닉스	NNP
+컴퓨터메카트로닉스	NNP
+아트 앤 디자인	NNP
+아트앤 디자인	NNP
+아트 앤디자인	NNP
+아트앤디자인	NNP
+
 #학과 줄임말
 중어	NNP
 일어	NNP
 경정	NNP
+영문과	NNP
 유교과	NNP
 글한	NNP
 물치	NNP
@@ -41,36 +102,10 @@ E-CLASS	NNP
 컴공	NNP
 아융	NNP
 컴메	NNP
+컴메카	NNP
 음대	NNP
 미대	NNP
-
-#학과명
-#신학	NNP
-#영어 	NNP
-#중국어 	NNP
-#일본어 	NNP
-#경영 	NNP
-#경영정보 	NNP
-#유아교육 	NNP
-#글로벌한국 	NNP
-#물리치료 	NNP
-#식품영양 	NNP
-#사회복지 	NNP
-#보건관리 	NNP
-#상담심리 	NNP
-#생활체육 	NNP
-#약학 	NNP
-#간호 	NNP
-#화학생명과학 	NNP
-#환경디자인원예 	NNP
-#동물생명자원 	NNP
-#컴퓨터공학부 	NNP
-#IT융합공학과 	NNP
-컴퓨터메카트로닉스공학부 	NNP
-메카트로닉스 	NNP
-#건축 	NNP
-#음악 	NNP
-아트앤디자인 	NNP
+아탠디	NNP
 
 #교수이름
 #신학
