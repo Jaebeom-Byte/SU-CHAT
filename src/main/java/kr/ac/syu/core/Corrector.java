@@ -28,13 +28,14 @@ public class Corrector {
 		List<Integer> distance = new ArrayList<Integer>();
 		
 		String pattern = "^[a-zA-Z]*$";
+		
 		for (Iterator<String> it = dicts.iterator(); it.hasNext();) {
 			String value = it.next();
-			 boolean i = Pattern.matches(pattern,value);
-			 if(i==true){
+			if (Pattern.matches(pattern, value)) {
 				it.remove();
 			}
 		}
+		
 		System.out.println(dicts);
 		/*^[a-zA-Z]*$
 		value.equals("ATM") || value.equals("FAQ") || value.equals("DB") || value.equals("F")
