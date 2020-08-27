@@ -16,75 +16,79 @@
 <link href="assets/css/chatbot.css" type="text/css" rel="stylesheet">
 
 <script>
-	var getDateTime = function() {
+	var getTime = function() {
 		var today = new Date()
-		var date_time = today.toLocaleTimeString()
-		return date_time
+		var time = today.getHours()
+
+		if (time < 12) {
+			time = '오전 ' + today.getHours() + ':' + today.getMinutes()
+		} else if (time == 12) {
+			time = '오후 ' + today.getHours() + ':' + today.getMinutes()
+		} else {
+			time = '오후 ' + (today.getHours() - 11) + ':' + today.getMinutes()
+		}
+		return time
 	}
 
 	var setRequest = function(msg) {
-		var date_time = getDateTime()
-		$('.msg_history').append('<div class="outgoing_msg">'
-							   + '<div class="sent_msg">'
-							   + '<p><b>' + msg + '</b></p>'
-							   + '<span class="time_date">' + date_time + '</span>'
-							   + '</div>'
-							   + '</div>' )
-		$('.msg_history').scrollTop(
-							$('.msg_history')[0].scrollHeight )
+		var date_time = getTime()
+		$('.msg_history').append(
+				'<div class="outgoing_msg">' + '<div class="sent_msg">' + '<p>'
+						+ msg + '</p>' + '<span class="time_date">' + date_time
+						+ '</span>' + '</div>' + '</div>')
+		$('.msg_history').scrollTop($('.msg_history')[0].scrollHeight)
 	}
-	
+
 	var postRequestToController = function() {
 		var msg = $('.write_msg').val()
-		
+
 		$('.write_msg').val('')
-		
-		if(msg == '') {
+
+		if (msg == '') {
 			$('.write_msg').focus()
 			return null
 		}
 		setRequest(msg)
-		
+
 		$.ajax({
-			type: 'POST',
-			url: 'ChatAPIController.chat',
-			data: msg,
-			contentType: 'application/json',
-			success: function(resdata) {
+			type : 'POST',
+			url : 'ChatAPIController.chat',
+			data : msg,
+			contentType : 'application/json',
+			success : function(resdata) {
 				var items = JSON.parse(resdata)
 				urlTypeParsor(items)
 			},
-			beforeSend: function() {
+			beforeSend : function() {
 				$('.wait').addClass('loading')
 			},
-			complete: function() {
+			complete : function() {
 				$('.wait').removeClass('loading')
 			},
-			error: function(e) {
+			error : function(e) {
 				console.log(e)
 			}
 		})
 	}
-	
+
 	var enterkeypress = function() {
-		if(event.keyCode == 13)
+		if (event.keyCode == 13)
 			postRequestToController()
 	}
-	
+
 	var urlTypeParsor = function(items) {
 		var urls = items.messages
-		
-		if(urls[0].includes('.png')) {
+
+		if (urls[0].includes('.png')) {
 			setImgResponse(items)
-		}
-		else {
+		} else {
 			setResponse(items)
 		}
 	}
-		
+
 	var setResponse = function(items) {
-		var date_time = getDateTime()
-		
+		var date_time = getTime()
+
 		for (index in items.messages) {
 			$('.msg_history')
 					.append(
@@ -92,8 +96,8 @@
 									+ '<div class="incoming_msg_img">'
 									+ '<img src="assets/images/bot-icon.png" alt="SU CHAT">'
 									+ '</div>' + '<div class="received_msg">'
-									+ '<div class="received_with_msg">'
-									+ '<p><b>' + items.messages[index] + '</p></b>'
+									+ '<div class="received_with_msg">' + '<p>'
+									+ items.messages[index] + '</p>'
 									+ '<span class="time_date">' + date_time
 									+ '</span>' + '</div>' + '</div>'
 									+ '</div>')
@@ -102,8 +106,8 @@
 	}
 
 	var setImgResponse = function(items) {
-		var date_time = getDateTime()
-		
+		var date_time = getTime()
+
 		for (index in items.messages) {
 			$('.msg_history')
 					.append(
@@ -114,10 +118,10 @@
 									+ '<div class="received_img">'
 									+ '<div class="received_contents_container">'
 									+ '<div class="received_with_img" style="background-image: url('
-									+ '\'' + items.messages[index] + '\')"' + '>'
-									+ '</div>' + '<span class="time_date">'
-									+ date_time + '</span>' + '</div>'
-									+ '</div>' + '</div>')
+									+ '\'' + items.messages[index] + '\')"'
+									+ '>' + '</div>' + '</div>'
+									+ '<span class="time_date">' + date_time
+									+ '</span>' + '</div>' + '</div>')
 			$('.msg_history').scrollTop($('.msg_history')[0].scrollHeight)
 		}
 	}
