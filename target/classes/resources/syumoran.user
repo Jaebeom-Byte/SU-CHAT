@@ -40,6 +40,12 @@ E-CLASS	NNP
 학점교류	NNP
 
 #학과 형태소 통합
+#추가
+경영 학과	NNP
+간호 학과	NNP
+건축 학과	NNP
+음악 학과	NNP
+#
 경영 정보	NNP
 경영정보	NNP
 유아 교육	NNP
@@ -122,11 +128,13 @@ IT융합	NNP
 최경천 	NNP
 하계상 	NNP
 #영어
-#Danielle 	NNP
-#Hyon 	NNP
-#Ruby 	NNP
+#DANIELLE MARIE ETTER 	NNP
+#HANNAH SHIN 	NNP
+#HYON KIM ELLIS 	NNP
+#RUBY CHRISTIAN LEWIS 	NNP
 김용성 	NNP
 신한나 	NNP
+한나신	NNP
 장용선 	NNP
 최경룡 	NNP
 #중국어
@@ -192,7 +200,7 @@ IT융합	NNP
 정종화 	NNP
 조미숙 	NNP
 #상담심리
-#Peters 	NNP
+#BARONESE HARRIET PETERS 	NNP
 박종환 	NNP
 서경현 	NNP
 이건호 	NNP
@@ -215,7 +223,7 @@ IT융합	NNP
 정현철 	NNP
 한숙정 	NNP
 #화학생명과학
-#WAMINAL 	NNP
+#NOMAR ESPINOSA WAMINAL 	NNP
 고원배 	NNP
 김남정 	NNP
 김민경 	NNP
@@ -237,8 +245,9 @@ IT융합	NNP
 전우민 	NNP
 정훈 	NNP
 #컴퓨터공학
+KWANG RAK KIM 	NNP
 고장혁 	NNP
-김광락 	NNP
+김광락	NNP
 김성완 	NNP
 김정숙 	NNP
 김현규 	NNP
@@ -250,8 +259,9 @@ IT융합	NNP
 양민규 	NNP
 최선순 	NNP
 #건축
-#Seungwook 	NNP
+#SEUNGWOOK THOMAS CHUNG 	NNP
 정승욱 	NNP
+승욱정	NNP
 권혜주 	NNP
 류수현 	NNP
 류한국 	NNP
