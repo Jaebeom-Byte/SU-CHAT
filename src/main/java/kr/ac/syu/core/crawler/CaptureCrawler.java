@@ -27,12 +27,12 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 			FileOutputStream fos = null;
 
 			try {
-				fos = new FileOutputStream(SAVE_PATH + generateImagePath(xpath));
+				fos = new FileOutputStream(SAVE_PATH + generateImagePath(url, xpath));
 				fos.write(imageByte);
 				if(imagePath == null)
-					imagePath = RETURN_PATH + generateImagePath(xpath);
+					imagePath = RETURN_PATH + generateImagePath(url, xpath);
 				else
-					imagePath += '|' + RETURN_PATH + generateImagePath(xpath);
+					imagePath += '|' + RETURN_PATH + generateImagePath(url, xpath);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -49,8 +49,8 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 		return imagePath;
 	}
 
-	private String generateImagePath(String xpath) {
-		String fileName = "/" + xpath.replaceAll("[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]", "") + ".png";
+	private String generateImagePath(String url, String xpath) {
+		String fileName = "/" + url.replaceAll("[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]", "") + xpath.replaceAll("[^\uAC00-\uD7A3xfe0-9a-zA-Z\\s]", "") + ".png";
 		return fileName;
 	}
 }
