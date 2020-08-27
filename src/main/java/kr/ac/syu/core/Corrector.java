@@ -3,6 +3,7 @@ package kr.ac.syu.core;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -24,7 +25,16 @@ public class Corrector {
 		dicts.addAll(generator.genarateDictionary("/resources/dictionary.properties"));
 		dicts.addAll(generator.genarateThesaurusList("/resources/thesaurus.properties"));
 		List<Integer> distance = new ArrayList<Integer>();
-
+		
+		
+		for (Iterator<String> it = dicts.iterator(); it.hasNext();) {
+			String value = it.next();
+			if (value.equals("ATM") || value.equals("FAQ") || value.equals("DB") || value.equals("F")
+					|| value.equals("FA") || value.equals("IT") || value.equals("LMS")) {
+				it.remove();
+			}
+		}
+		
 		int totalElementsOfNAs = NAs.size();
 		int totalElementsOfdict = dicts.size();
 		int index = 0;
@@ -44,7 +54,7 @@ public class Corrector {
 		});
 
 		for (Entry<String, Integer> entry : list_entries) {
-			if (entry.getValue() <= 3) {
+			if (entry.getValue() <= 2) {
 				confirmed.add(entry.getKey());
 			}
 		}
