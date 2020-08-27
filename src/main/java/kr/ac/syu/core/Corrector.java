@@ -36,10 +36,6 @@ public class Corrector {
 			}
 		}
 		
-		System.out.println(dicts);
-		/*^[a-zA-Z]*$
-		value.equals("ATM") || value.equals("FAQ") || value.equals("DB") || value.equals("F")
-		|| value.equals("FA") || value.equals("IT") || value.equals("LMS")*/
 		int totalElementsOfNAs = NAs.size();
 		int totalElementsOfdict = dicts.size();
 		int index = 0;
