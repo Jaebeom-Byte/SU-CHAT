@@ -18,14 +18,16 @@
 <script>
 	var getTime = function() {
 		var today = new Date()
-		var time = today.getHours()
 
-		if (time < 12) {
-			time = '오전 ' + today.getHours() + ':' + today.getMinutes()
-		} else if (time == 12) {
-			time = '오후 ' + today.getHours() + ':' + today.getMinutes()
+		if (today.getHours() <= 12) {
+			time = '오전 ' + today.getHours() + ':'
 		} else {
-			time = '오후 ' + (today.getHours() - 11) + ':' + today.getMinutes()
+			time = '오후 ' + (today.getHours() - 12) + ':'
+		}
+		if(today.getMinutes() <= 9) {
+			time +=  '0' + today.getMinutes()
+		} else {
+			time += today.getMinutes()
 		}
 		return time
 	}
