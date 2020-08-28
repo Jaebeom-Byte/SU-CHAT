@@ -11,10 +11,10 @@ public abstract class TextCrawler extends AbstractCrawler {
 	protected String crawText(String url, String ... xpaths) {
 		String text = "";
 		this.url = url;
+		driver.manage().window().maximize();
 		driver.get(url);
 		
 		for(String xpath : xpaths) {
-			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 			driver.findElement(By.xpath(xpath));
 			List<WebElement> timetable = driver.findElements(By.xpath(xpath));
