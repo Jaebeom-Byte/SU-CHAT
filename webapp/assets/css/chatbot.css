@@ -182,9 +182,6 @@ img {
 	margin: 0;
 	padding: 5px 13px 5px 13px;
 	width: 100%;
-	overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .time_date {
@@ -222,9 +219,6 @@ img {
 	color: #fff;
 	padding: 5px 13px 5px 13px;
 	width: 100%;
-	overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .outgoing_msg {
