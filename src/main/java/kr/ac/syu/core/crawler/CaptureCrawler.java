@@ -27,7 +27,7 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 			FileOutputStream fos = null;
 
 			try {
-				fos = new FileOutputStream(SAVE_PATH + generateImagePath(url, xpath));
+				fos = new FileOutputStream(SAVE_PATH + generateImagePath(url, xpath), false);
 				fos.write(imageByte);
 				if(imagePath == null)
 					imagePath = RETURN_PATH + generateImagePath(url, xpath);
