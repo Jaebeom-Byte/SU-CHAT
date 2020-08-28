@@ -1,7 +1,11 @@
 #just syumoran
 수윙스	NNP
+e-class	NNP
+E-class	NNP
+e-Class	NNP
+E-Class	NNP
 이클래스	NNP
-E-CLASS	NNP
+에레메스	NNP
 파인하우스	NNP
 커리	NNP
 
@@ -11,6 +15,9 @@ E-CLASS	NNP
 총학	NNP
 
 #같은 어절 내 형태소 통합 > [입학,처] >> [입학처]
+#추가
+통번역	NNP
+#
 입학처	NNP
 편의점	NNP
 폐강	NNP
@@ -41,7 +48,6 @@ E-CLASS	NNP
 경영 학과	NNP
 간호 학과	NNP
 건축 학과	NNP
-음악 학과	NNP
 #
 경영 정보	NNP
 경영정보	NNP
@@ -77,6 +83,8 @@ E-CLASS	NNP
 컴퓨터공학부	NNP
 IT 융합	NNP
 IT융합	NNP
+it 융합	NNP
+it융합	NNP
 아이티 융합	NNP
 아이티융합	NNP
 컴퓨터 메카트로닉스	NNP
@@ -85,6 +93,8 @@ IT융합	NNP
 아트앤 디자인	NNP
 아트 앤디자인	NNP
 아트앤디자인	NNP
+음악 학과	NNP
+음악학과	NNP
 
 #학과 줄임말
 중어	NNP
@@ -109,6 +119,7 @@ IT융합	NNP
 컴메카	NNP
 메카	NNP
 메카트로닉스	NNP
+음악과	NNP
 음대	NNP
 미대	NNP
 아탠디	NNP
