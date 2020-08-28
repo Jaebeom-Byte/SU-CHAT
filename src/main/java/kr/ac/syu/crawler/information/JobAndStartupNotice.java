@@ -2,7 +2,7 @@ package kr.ac.syu.crawler.information;
 
 import kr.ac.syu.core.crawler.URLSender;
 
-public class FoundingAnnouncementNotice extends URLSender {
+public class JobAndStartupNotice extends URLSender {
 	@Override
 	public String process() {
 		return packLink("https://www.syu.ac.kr/university-square/notice/employment-founding-announcement/",

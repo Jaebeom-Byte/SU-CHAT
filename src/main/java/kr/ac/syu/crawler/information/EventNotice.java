@@ -3,7 +3,7 @@ package kr.ac.syu.crawler.information;
 
 import kr.ac.syu.core.crawler.URLSender;
 
-public class Event extends URLSender {
+public class EventNotice extends URLSender {
 	@Override
 	public String process() {
 		return packLink("https://www.syu.ac.kr/university-square/notice/event/",

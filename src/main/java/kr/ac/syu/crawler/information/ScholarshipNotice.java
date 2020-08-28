@@ -2,7 +2,7 @@ package kr.ac.syu.crawler.information;
 
 import kr.ac.syu.core.crawler.URLSender;
 
-public class ScolarshipNotice extends URLSender {
+public class ScholarshipNotice extends URLSender {
 	@Override
 	public String process() {
 		return packLink("https://www.syu.ac.kr/academic/scholarship-information/scholarship-notice/",
