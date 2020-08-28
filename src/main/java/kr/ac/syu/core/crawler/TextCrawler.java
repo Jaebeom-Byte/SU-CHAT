@@ -12,9 +12,11 @@ public abstract class TextCrawler extends AbstractCrawler {
 		String text = "";
 		this.url = url;
 		driver.get(url);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
 		for(String xpath : xpaths) {
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			driver.findElement(By.xpath(xpath));
 			List<WebElement> timetable = driver.findElements(By.xpath(xpath));
 		    for(WebElement roof : timetable) {
 		    	text += roof.getText();

@@ -19,9 +19,11 @@ public abstract class CaptureCrawler extends AbstractCrawler {
 		String imagePath = null;
 		this.url = url;
 		driver.get(url);
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
 		for(String xpath : xpaths) {
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			driver.findElement(By.xpath(xpath));
 			screenshot = (TakesScreenshot) driver.findElement(By.xpath(xpath));
 			byte[] imageByte = screenshot.getScreenshotAs(OutputType.BYTES);	
 			FileOutputStream fos = null;
