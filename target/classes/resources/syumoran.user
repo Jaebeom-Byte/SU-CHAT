@@ -8,15 +8,18 @@ E-Class	NNP
 에레메스	NNP
 파인하우스	NNP
 커리	NNP
+돌단	NNP
 
 #줄임말/약어
 디비	NNP
 파인	NNP
 총학	NNP
+동연회	NNP
 
 #같은 어절 내 형태소 통합 > [입학,처] >> [입학처]
 #추가
 통번역	NNP
+의원회	NNP
 #
 입학처	NNP
 편의점	NNP
@@ -44,11 +47,12 @@ E-Class	NNP
 학점교류	NNP
 
 #학과 형태소 통합
-#추가
-경영 학과	NNP
 간호 학과	NNP
+간호학과	NNP
 건축 학과	NNP
-#
+건축학과	NNP
+경영 학과	NNP
+경영학과	NNP
 경영 정보	NNP
 경영정보	NNP
 유아 교육	NNP
