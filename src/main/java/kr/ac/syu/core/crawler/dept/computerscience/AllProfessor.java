@@ -1,11 +1,11 @@
 package kr.ac.syu.core.crawler.dept.computerscience;
 
-import kr.ac.syu.core.crawler.TextCrawler;
+import kr.ac.syu.core.crawler.CaptureCrawler;
 
-public class AllProfessor extends TextCrawler {
+public class AllProfessor extends CaptureCrawler {
 	@Override
 	public String process() {
-		return crawText("https://www.syu.ac.kr/cse/faculty/professor/",
+		return crawImage("https://www.syu.ac.kr/cse/faculty/professor/",
 				"//*[@id=\"post-237\"]/div[2]/ul/li[1]/div/div[1]/div[2]/h3/a/span[1]",
 				"//*[@id=\"post-237\"]/div[2]/ul/li[2]/div/div[1]/div[2]/h3/a/span[1]",
 				"//*[@id=\"post-237\"]/div[2]/ul/li[3]/div/div[1]/div[2]/h3/a/span[1]",
