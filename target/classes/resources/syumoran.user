@@ -9,6 +9,10 @@ E-Class	NNP
 파인하우스	NNP
 커리	NNP
 돌단	NNP
+VOS	NNP
+vos	NNP
+V.O.S	NNP
+v.o.s	NNP
 
 #줄임말/약어
 디비	NNP
