@@ -2,7 +2,7 @@ package kr.ac.syu.crawler.curriculum;
 
 import kr.ac.syu.core.crawler.CaptureCrawler;
 
-public class LiberalArtsCur extends CaptureCrawler {
+public class LiberalArtsCur extends CaptureCrawler { // 교양대학
 	@Override
 	public String process() {
 		String realImagePath = null;

@@ -6,6 +6,7 @@ public class ComputerMechatronicsCur extends CaptureCrawler { // 메카트로닉
 	@Override
 	public String process() {
 		return crawImage("https://www.syu.ac.kr/comp/curriculum/curriculum/",
+				/*
 				"//*[@id=\"post-48\"]/div[1]/div[1]",
 				"//*[@id=\"post-48\"]/div[1]/div[2]",
 				"//*[@id=\"post-48\"]/div[1]/div[3]",
@@ -13,6 +14,8 @@ public class ComputerMechatronicsCur extends CaptureCrawler { // 메카트로닉
 				"//*[@id=\"post-48\"]/div[1]/div[5]",
 				"//*[@id=\"post-48\"]/div[1]/div[6]",
 				"//*[@id=\"post-48\"]/div[1]/div[7]",
-				"//*[@id=\"post-48\"]/div[1]/div[8]");
+				"//*[@id=\"post-48\"]/div[1]/div[8]"
+				*/
+				"//*[@id=\"post-48\"]/div[1]");
 	}
 }
