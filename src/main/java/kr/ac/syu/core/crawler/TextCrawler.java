@@ -39,7 +39,7 @@ public abstract class TextCrawler extends AbstractCrawler {
 			List<WebElement> timetable = driver.findElements(By.xpath(xpath));
 			text = "<table border=\"0\" align = \"center\">";
 		    for(WebElement roof : timetable) {
-		    	text += "<tr><a href=\"" + roof.getAttribute("a") + "\">" + roof.getText() + "</a></tr>";
+		    	text += "<tr><a href=\"" + roof.getAttribute("a") + "\">" + roof.getText().replaceAll("<.*?>", "") + "</a></tr>";
 		    }
 		    text += "</table><br>" + '|';
 		}
