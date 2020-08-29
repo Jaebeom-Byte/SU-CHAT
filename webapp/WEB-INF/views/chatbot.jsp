@@ -20,7 +20,7 @@
 <script>
 
 	(function($) {
-		$('.swipebox').swipebox()
+		$('.swipebox').swipebox({removeBarsOnMobile : false})
 	})(jQuery)
 
 	var getTime = function() {
