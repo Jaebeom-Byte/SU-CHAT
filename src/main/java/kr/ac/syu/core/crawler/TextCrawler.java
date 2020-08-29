@@ -26,4 +26,24 @@ public abstract class TextCrawler extends AbstractCrawler {
 		driver.quit();
 		return text;
 	}
+	
+	protected String crawTable(String url, String ... xpaths) {
+		String text = "";
+		this.url = url;
+		driver.manage().window().maximize();
+		driver.get(url);
+		
+		for(String xpath : xpaths) {
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			driver.findElement(By.xpath(xpath));
+			List<WebElement> timetable = driver.findElements(By.xpath(xpath));
+			text = "<table border=\"0\" align = \"center\">";
+		    for(WebElement roof : timetable) {
+		    	text += "<tr><a href=\"" + roof.getAttribute("a") + "\">" + roof.getText() + "</a></tr>";
+		    }
+		    text += "</table><br>";
+		}
+		driver.quit();
+		return text;
+	}
 }

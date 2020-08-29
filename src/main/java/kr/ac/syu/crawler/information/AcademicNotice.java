@@ -1,5 +1,11 @@
 package kr.ac.syu.crawler.information;
 
-public class AcademicNotice {
-//준석쿤... 학사 공지 부탁해.. ㅠ 힘들지 미안
+import kr.ac.syu.core.crawler.TextCrawler;
+
+public class AcademicNotice extends TextCrawler {
+	@Override
+	public String process() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
