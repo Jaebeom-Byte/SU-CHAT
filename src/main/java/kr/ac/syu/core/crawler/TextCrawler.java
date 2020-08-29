@@ -41,7 +41,7 @@ public abstract class TextCrawler extends AbstractCrawler {
 		    for(WebElement roof : timetable) {
 		    	text += "<tr><a href=\"" + roof.getAttribute("a") + "\">" + roof.getText() + "</a></tr>";
 		    }
-		    text += "</table><br>";
+		    text += "</table><br>" + '|';
 		}
 		driver.quit();
 		return text;
