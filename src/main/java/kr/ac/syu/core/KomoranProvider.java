@@ -15,7 +15,7 @@ public class KomoranProvider {
 		if(komoranProvider == null) {
 			komoranProvider = new Komoran(DEFAULT_MODEL.LIGHT);
 //			komoranProvider.setUserDic(getSyumoranPath());
-			komoranProvider.setUserDic("C:\\Users\\PC\\Desktop\\web-ws\\su-chat-git\\src\\main\\java\\resources\\syumoran.user");
+			komoranProvider.setUserDic("C:\\Users\\Jaebeom\\Desktop\\web-ws\\su-chat-clone\\src\\main\\java\\resources\\syumoran.user");
 		}
 		return komoranProvider;
 	}

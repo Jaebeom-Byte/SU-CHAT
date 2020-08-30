@@ -18,9 +18,10 @@
 <link href="assets/css/chatbot.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/swipebox.css">
 <script>
-
 	(function($) {
-		$('.swipebox').swipebox({removeBarsOnMobile : false})
+		$('.swipebox').swipebox({
+			removeBarsOnMobile : false
+		})
 	})(jQuery)
 
 	var getTime = function() {
@@ -45,10 +46,10 @@
 
 	var setRequest = function(msg) {
 		var date_time = getTime()
-		$('.msg_history').append(
+		$('.msg_history').append($(
 				'<div class="outgoing_msg">' + '<div class="sent_msg">' + '<p>'
 						+ msg + '</p>' + '<span class="time_date">' + date_time
-						+ '</span>' + '</div>' + '</div>')
+						+ '</span>' + '</div>' + '</div>').fadeIn())
 		$('.msg_history').scrollTop($('.msg_history')[0].scrollHeight)
 	}
 
@@ -105,7 +106,7 @@
 		for (index in items.messages) {
 			$('.msg_history')
 					.append(
-							'<div class="incoming_msg">'
+							$('<div class="incoming_msg">'
 									+ '<div class="incoming_msg_img">'
 									+ '<img src="assets/images/bot-icon.png" alt="SU CHAT">'
 									+ '</div>' + '<div class="received_msg">'
@@ -113,7 +114,7 @@
 									+ items.messages[index] + '</p>'
 									+ '<span class="time_date">' + date_time
 									+ '</span>' + '</div>' + '</div>'
-									+ '</div>')
+									+ '</div>').fadeIn())
 			$('.msg_history').scrollTop($('.msg_history')[0].scrollHeight)
 		}
 	}
@@ -124,7 +125,7 @@
 		for (index in items.messages) {
 			$('.msg_history')
 					.append(
-							'<div class="incoming_msg">'
+							$('<div class="incoming_msg">'
 									+ '<div class="incoming_msg_img">'
 									+ '<img src="assets/images/bot-icon.png" alt="image">'
 									+ '</div>'
@@ -135,7 +136,7 @@
 									+ '</a>' + '</div>'
 									+ '<span class="time_date">' + date_time
 									+ '</span>' + '</div>' + '</div>'
-									+ '</div>')
+									+ '</div>').fadeIn())
 			$('.msg_history').scrollTop($('.msg_history')[0].scrollHeight)
 		}
 	}
@@ -145,7 +146,7 @@
 	<div class="container">
 		<div class="mesgs">
 			<div class="mesg_header">
-				<h2>SU TALK</h2>
+				<h2>SU CHAT</h2>
 			</div>
 			<div class="msg_history">
 				<div class="wait"></div>

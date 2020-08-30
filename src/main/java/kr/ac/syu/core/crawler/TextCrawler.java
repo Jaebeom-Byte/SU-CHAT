@@ -27,21 +27,24 @@ public abstract class TextCrawler extends AbstractCrawler {
 		return text;
 	}
 	
-	protected String crawTable(String url, String ... xpaths) {
-		String text = "";
+	protected String crawList(String url, String mesg, String ... xpaths) {	
 		this.url = url;
 		driver.manage().window().maximize();
 		driver.get(url);
 		
+		String text = mesg + "<br>";
 		for(String xpath : xpaths) {
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 			driver.findElement(By.xpath(xpath));
 			List<WebElement> timetable = driver.findElements(By.xpath(xpath));
-			text = "<table border=\"0\" align = \"center\">";
 		    for(WebElement roof : timetable) {
-		    	text += "<tr><a href=\"" + roof.getAttribute("a") + "\">" + roof.getText().replaceAll("<.*?>", "") + "</a></tr>";
+		    	if(roof.getAttribute("href") != null) {
+		    		text += "<a href=\"" + roof.getAttribute("href") + "\">" + roof.getText().replaceAll("<.*?>", "") + "</a><br>";
+		    	} else {
+		    		text += "<a href=\"#\">" + roof.getText().replaceAll("<.*?>", "") + "</a>";
+		    		break;
+		    	}
 		    }
-		    text += "</table><br>" + '|';
 		}
 		driver.quit();
 		return text;
